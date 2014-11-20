@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
-            <name>GSB-2014_initial</name>
+            <name>GSB-2014-eq1_initial</name>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
