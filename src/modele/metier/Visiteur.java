@@ -19,7 +19,7 @@ public class Visiteur {
     @Id
     @GeneratedValue
     @Column(name="VIS_MATRICULE", length=10)
-    private Long matricule;
+    private String matricule;
     @Column(name="VIS_NOM", length=25)
     private String nom;
     @Column(name="Vis_PRENOM", length=50)
@@ -32,9 +32,11 @@ public class Visiteur {
     private String ville;
     @Column(name="VIS_DATEEMBAUCHE")
     private Date dateEmbauche;
-    
-    //@Column(name="SEC_CODE")
-    
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
+    @Column(name="SEC_CODE", length=1)
+    @JoinColumn(name="SEC_CODE")
+    private String code;
+    //@Transient
     //@Column(name="LAB_CODE")
     
 }
