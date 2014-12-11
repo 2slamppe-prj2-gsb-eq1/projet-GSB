@@ -25,8 +25,8 @@ public class VueConnexion extends VueAbstrait {
     /**
      * Creates new form Vue_Menu
      */
-    public VueConnexion(CtrlAbstrait ctrl) {
-        super(ctrl);
+    public VueConnexion(CtrlAbstrait ctrlA) {
+        super(ctrlA);
         initComponents();        
     }
 

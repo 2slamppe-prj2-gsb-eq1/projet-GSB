@@ -39,5 +39,80 @@ public class Visiteur {
     @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name="LAB_CODE")
     private Labo code_lab; 
+
+    public String getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getCp() {
+        return cp;
+    }
+
+    public void setCp(String cp) {
+        this.cp = cp;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public Date getDateEmbauche() {
+        return dateEmbauche;
+    }
+
+    public void setDateEmbauche(Date dateEmbauche) {
+        this.dateEmbauche = dateEmbauche;
+    }
+
+    public Secteur getCode_sec() {
+        return code_sec;
+    }
+
+    public void setCode_sec(Secteur code_sec) {
+        this.code_sec = code_sec;
+    }
+
+    public Labo getCode_lab() {
+        return code_lab;
+    }
+
+    public void setCode_lab(Labo code_lab) {
+        this.code_lab = code_lab;
+    }
+    
+    
     
 }
+
