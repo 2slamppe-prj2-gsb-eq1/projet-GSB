@@ -28,34 +28,34 @@ public class Vue_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBoxComptesRendus = new javax.swing.JCheckBox();
+        jCheckBoxVisiteurs = new javax.swing.JCheckBox();
+        jCheckBoxPracticiens = new javax.swing.JCheckBox();
+        jCheckBoxMedicaments = new javax.swing.JCheckBox();
+        jCheckBoxQuit = new javax.swing.JCheckBox();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTitre = new javax.swing.JLabel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jCheckBox1.setText("Comptes-Rendus");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBoxComptesRendus.setText("Comptes-Rendus");
+        jCheckBoxComptesRendus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                jCheckBoxComptesRendusActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("Visiteurs");
+        jCheckBoxVisiteurs.setText("Visiteurs");
 
-        jCheckBox3.setText("Practiciens");
+        jCheckBoxPracticiens.setText("Practiciens");
 
-        jCheckBox4.setText("Medicaments");
+        jCheckBoxMedicaments.setText("Medicaments");
 
-        jCheckBox5.setText("Quitter");
+        jCheckBoxQuit.setText("Quitter");
 
-        jLabel1.setText("Gestion des comptes rendus");
+        jLabelTitre.setText("Gestion des comptes rendus");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,17 +66,17 @@ public class Vue_Menu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(135, 135, 135)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox2)))
+                            .addComponent(jCheckBoxComptesRendus)
+                            .addComponent(jCheckBoxMedicaments)
+                            .addComponent(jCheckBoxQuit)
+                            .addComponent(jCheckBoxPracticiens)
+                            .addComponent(jCheckBoxVisiteurs)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(222, 222, 222)
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(163, 163, 163)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabelTitre)))
                 .addContainerGap(189, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -88,7 +88,7 @@ public class Vue_Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jLabel1)
+                .addComponent(jLabelTitre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
@@ -96,24 +96,24 @@ public class Vue_Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
+                .addComponent(jCheckBoxComptesRendus)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
+                .addComponent(jCheckBoxVisiteurs)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox3)
+                .addComponent(jCheckBoxPracticiens)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox4)
+                .addComponent(jCheckBoxMedicaments)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox5)
+                .addComponent(jCheckBoxQuit)
                 .addGap(80, 80, 80))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jCheckBoxComptesRendusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxComptesRendusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jCheckBoxComptesRendusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,12 +153,12 @@ public class Vue_Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JCheckBox jCheckBoxComptesRendus;
+    private javax.swing.JCheckBox jCheckBoxMedicaments;
+    private javax.swing.JCheckBox jCheckBoxPracticiens;
+    private javax.swing.JCheckBox jCheckBoxQuit;
+    private javax.swing.JCheckBox jCheckBoxVisiteurs;
+    private javax.swing.JLabel jLabelTitre;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

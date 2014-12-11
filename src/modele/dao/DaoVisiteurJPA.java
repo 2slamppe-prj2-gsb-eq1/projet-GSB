@@ -1,7 +1,5 @@
 /*
- * DaoClientJPA
- * @author nbourgeois
- * @version 08/11/2014
+ * DaoVisiteurJPA
  */
 package modele.dao;
 
@@ -15,11 +13,11 @@ import modele.metier.Visiteur;
 public class DaoVisiteurJPA {
 
     /**
-     * selectOne : lire un enregistrement dans la table CLIENT
+     * selectOne : lire un enregistrement dans la table Visiteur
      *
      * @param em : contexte de persistance
      * @param matricule : identifiant technique
-     * @return une instance de la classe Client
+     * @return une instance de la classe Visiteur
      */
     public static Visiteur selectOne(EntityManager em, Long matricule) throws PersistenceException {
         Visiteur unVisiteur = null;
@@ -29,14 +27,14 @@ public class DaoVisiteurJPA {
     
 
     /**
-     * lire tous les enregistrements de la table CLIENT
+     * lire tous les enregistrements de la table Visiteur
      *
      * @param em : contexte de persistance
-     * @return une collection d'instances de la classe Client
+     * @return une collection d'instances de la classe visiteur
      */
     public static List<Visiteur> selectAll(EntityManager em) throws PersistenceException {
         List<Visiteur> lesVisiteurs = null;
-        Query query= em.createQuery("select c from Visiteur c");
+        Query query= em.createQuery("select v from Visiteur v");
         lesVisiteurs = query.getResultList();
         return lesVisiteurs;
     }
