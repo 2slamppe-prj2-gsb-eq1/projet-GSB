@@ -22,7 +22,7 @@ public class Visiteur {
     private String matricule;
     @Column(name="VIS_NOM", length=25)
     private String nom;
-    @Column(name="Vis_PRENOM", length=50)
+    @Column(name="VIS_PRENOM", length=50)
     private String prenom;
     @Column(name="VIS_ADRESSE", length=50)
     private String adresse;

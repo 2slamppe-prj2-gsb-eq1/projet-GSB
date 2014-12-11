@@ -34,7 +34,7 @@ public class DaoVisiteurJPA {
      */
     public static Visiteur selectOneByLogin(EntityManager em, String login) throws PersistenceException {
         Visiteur visiteur = null;
-        Query query = em.createQuery("select v from Visiteur v where v.vis_nom = :login");
+        Query query = em.createQuery("select v from Visiteur v where v.nom = :login");
         query.setParameter("login", login);
         visiteur = (Visiteur) query.getSingleResult();
         return visiteur;
@@ -64,10 +64,10 @@ public class DaoVisiteurJPA {
     public static boolean verifierLoginMdp(EntityManager em,  String login, String mdp) throws PersistenceException {
         boolean ok=false;
         Visiteur unVisiteur = selectOneByLogin(em, login);
-        Format formatter = new SimpleDateFormat("dd-MMM-yyyy");
+        Format formatter = new SimpleDateFormat("dd-MMM-yyyy",Locale.ENGLISH);
         String dateEmbauche = formatter.format(unVisiteur.getDateEmbauche());
         
-        if(dateEmbauche==mdp){
+        if(dateEmbauche.toLowerCase().equals(mdp)){
             ok=true;
         }
         
