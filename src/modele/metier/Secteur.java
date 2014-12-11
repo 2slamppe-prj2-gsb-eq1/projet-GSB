@@ -18,7 +18,7 @@ public class Secteur {
     @Id
     @GeneratedValue
     @Column(name="SEC_CODE", length=1)
-    private String code;
+    private String code_sec;
     @Column(name="SEC_LIBELLE", length=15)
     private String libelle;
  

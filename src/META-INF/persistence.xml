@@ -2,6 +2,9 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="GSB-2014-eq1_initialPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>modele.metier.Secteur</class>
+    <class>modele.metier.Labo</class>
+    <class>modele.metier.Visiteur</class>
     <properties>
       <property name="javax.persistence.schema-generation.scripts.action" value="create"/>
       <property name="javax.persistence.schema-generation.scripts.create-target" value="createBD.sql"/>

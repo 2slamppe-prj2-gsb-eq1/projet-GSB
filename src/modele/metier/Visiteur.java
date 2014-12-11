@@ -31,14 +31,13 @@ public class Visiteur {
     @Column(name="VIS_VILLE", length=30)
     private String ville;
     @Column(name="VIS_DATEEMBAUCHE")
+    @Temporal(value=TemporalType.DATE)
     private Date dateEmbauche;
     @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
-    @Column(name="SEC_CODE", length=1)
     @JoinColumn(name="SEC_CODE")
-    private String code_sec;
+    private Secteur code_sec;
     @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
-    @Column(name="LAB_CODE", length=2)
     @JoinColumn(name="LAB_CODE")
-    private String code_lab;
+    private Labo code_lab; 
     
 }

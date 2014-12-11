@@ -19,7 +19,7 @@ public class Labo {
     @Id
     @GeneratedValue
     @Column(name="LAB_CODE", length=2)
-    private String code;
+    private String code_lab;
     @Column(name="LAB_NOM", length=10)
     private String nom;
     @Column(name="LAB_CHEFVENTE", length=20)
