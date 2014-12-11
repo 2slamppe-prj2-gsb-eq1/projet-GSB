@@ -8,7 +8,6 @@ package Vue;
 
 import Controleur.CtrlConnexion;
 import Controleur.CtrlAbstrait;
-import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -69,20 +68,6 @@ public class VueConnexion extends VueAbstrait {
 
         jLabelLogin.setText("Login");
 
-        jPasswordFieldMdp.setText("jPasswordField1");
-        jPasswordFieldMdp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldMdpActionPerformed(evt);
-            }
-        });
-
-        jTextFieldLogin.setText("login");
-        jTextFieldLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldLoginActionPerformed(evt);
-            }
-        });
-
         jLabelMdp.setText("Mot de passe");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -137,20 +122,12 @@ public class VueConnexion extends VueAbstrait {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderActionPerformed
-        // TODO add your handling code here:
+        this.ctrl.valider();
     }//GEN-LAST:event_jButtonValiderActionPerformed
 
     private void jButtonQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitterActionPerformed
-        // TODO add your handling code here:
+        this.ctrl.quitter();
     }//GEN-LAST:event_jButtonQuitterActionPerformed
-
-    private void jTextFieldLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldLoginActionPerformed
-
-    private void jPasswordFieldMdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldMdpActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldMdpActionPerformed
 
     public CtrlConnexion getCtrl() {
         return ctrl;

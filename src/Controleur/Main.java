@@ -6,9 +6,10 @@
 
 package Controleur;
 
-import vue.VueAdresse;
+import Vue.VueConnexion;
 import Vue.VueAbstrait;
 import Controleur.CtrlAbstrait;
+import Controleur.CtrlConnexion;
 
 /**
  *
@@ -29,24 +30,24 @@ public class Main {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VueAdresse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VueAdresse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VueAdresse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VueAdresse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VueConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "AGENCEB", "root", "joliverie");
+                //Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "AGENCEB", "root", "joliverie");
                 VueAbstrait vueA = null;
                 CtrlAbstrait CtrlA = null;
-                VueAdresse vue = new VueAdresse(CtrlA);
-                CtrlAdresse ctrl = new CtrlAdresse(vue, vueA);
+                VueConnexion vue = new VueConnexion(CtrlA);
+                CtrlConnexion ctrl = new CtrlConnexion(vue, vueA);
                 vue.setVisible(true);
             }
         });

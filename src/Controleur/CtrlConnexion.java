@@ -8,8 +8,6 @@ package Controleur;
 
 import Vue.VueConnexion;
 import Vue.VueAbstrait;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +20,12 @@ public class CtrlConnexion extends CtrlAbstrait{
         super(vueA);
         this.vue = vue;
         this.vue.setCtrl(this);
-        this.vue.setVisible(true);
+    }
+    public void valider(){
+
+    }
+    
+    public void quitter(){
+        
     }
 }
