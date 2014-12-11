@@ -35,8 +35,10 @@ public class Visiteur {
     @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
     @Column(name="SEC_CODE", length=1)
     @JoinColumn(name="SEC_CODE")
-    private String code;
-    //@Transient
-    //@Column(name="LAB_CODE")
+    private String code_sec;
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
+    @Column(name="LAB_CODE", length=2)
+    @JoinColumn(name="LAB_CODE")
+    private String code_lab;
     
 }
