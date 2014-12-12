@@ -116,6 +116,8 @@ public class VueVisiteurs extends VueAbstrait {
 
         jLabelChercher.setText("Chercher");
 
+        jComboBoxChercher.setToolTipText("");
+
         jButtonChercher.setText("Ok");
         jButtonChercher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,8 +138,8 @@ public class VueVisiteurs extends VueAbstrait {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelChercher)
                                 .addGap(42, 42, 42)
-                                .addComponent(jComboBoxChercher, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxChercher, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonChercher))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,8 +173,9 @@ public class VueVisiteurs extends VueAbstrait {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                                         .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jComboBoxSecteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxLabo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jComboBoxLabo, javax.swing.GroupLayout.Alignment.LEADING, 0, 169, Short.MAX_VALUE)
+                                        .addComponent(jComboBoxSecteur, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(61, 61, 61)
@@ -234,19 +237,20 @@ public class VueVisiteurs extends VueAbstrait {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonChercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChercherActionPerformed
-        this.ctrlV.chercher();
+        ((CtrlVisiteurs)controleur).chercher();
     }//GEN-LAST:event_jButtonChercherActionPerformed
 
     private void jButtonPrecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrecActionPerformed
-        this.ctrlV.precedent();
+        ((CtrlVisiteurs)controleur).precedent();
     }//GEN-LAST:event_jButtonPrecActionPerformed
 
     private void jButtonSuivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuivActionPerformed
-        this.ctrlV.suivant();
+        ((CtrlVisiteurs)controleur).suivant();
+        //System.out.print("coucou");
     }//GEN-LAST:event_jButtonSuivActionPerformed
 
     private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
-        this.ctrlV.close();
+        ((CtrlVisiteurs)controleur).close();
     }//GEN-LAST:event_jButtonCloseActionPerformed
 
     public CtrlVisiteurs getCtrl() {

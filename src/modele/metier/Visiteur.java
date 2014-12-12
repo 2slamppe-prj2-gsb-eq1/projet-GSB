@@ -111,8 +111,13 @@ public class Visiteur {
     public void setCode_lab(Labo code_lab) {
         this.code_lab = code_lab;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "\n\tVisiteur{" + "matricule=" + matricule + ", nom=" + nom + ", prenom=" + prenom + 
+                ", adresse=" + adresse + ", cp=" + cp + ", ville=" + ville + ", dateEmbauche=" + dateEmbauche + 
+                ", code_sec=" + code_sec + ", code_lab=" + code_lab + '}';
+    }
     
 }
 

@@ -22,10 +22,10 @@ public class CtrlConnexion extends CtrlAbstrait{
     public boolean connexion;
     EntityManager em;
     
-    public CtrlConnexion(VueConnexion vue, VueAbstrait vueA){
+    public CtrlConnexion(VueConnexion vue, VueAbstrait vueA) {
         super(vueA);
         this.vue = vue;
-        this.vue.setCtrl(this);// Gérer la persistance
+        // Gérer la persistance
         em = EntityManagerFactorySingleton.getInstance().createEntityManager();
         em.getTransaction().begin();
     }

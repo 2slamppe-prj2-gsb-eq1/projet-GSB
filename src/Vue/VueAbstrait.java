@@ -19,4 +19,12 @@ public abstract class VueAbstrait extends javax.swing.JFrame {
     public VueAbstrait(CtrlAbstrait ctrl){
         this.controleur=ctrl;
     }
+
+    public CtrlAbstrait getControleur() {
+        return controleur;
+    }
+
+    public void setControleur(CtrlAbstrait controleur) {
+        this.controleur = controleur;
+    }
 }

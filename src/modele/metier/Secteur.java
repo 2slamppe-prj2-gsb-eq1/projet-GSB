@@ -21,5 +21,20 @@ public class Secteur {
     private String code_sec;
     @Column(name="SEC_LIBELLE", length=15)
     private String libelle;
- 
+
+    public String getCode_sec() {
+        return code_sec;
+    }
+
+    public void setCode_sec(String code_sec) {
+        this.code_sec = code_sec;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
 }

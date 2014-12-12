@@ -24,5 +24,31 @@ public class Labo {
     private String nom;
     @Column(name="LAB_CHEFVENTE", length=20)
     private String chefVente;
+
+    public String getCode_lab() {
+        return code_lab;
+    }
+
+    public void setCode_lab(String code_lab) {
+        this.code_lab = code_lab;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getChefVente() {
+        return chefVente;
+    }
+
+    public void setChefVente(String chefVente) {
+        this.chefVente = chefVente;
+    }
+    
+    
     
 }

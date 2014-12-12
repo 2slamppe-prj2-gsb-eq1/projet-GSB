@@ -6,13 +6,12 @@
 
 package Controleur;
 
-import Vue.VueAbstrait;
-import Vue.VueVisiteurs;
 import java.util.List;
 import javax.persistence.EntityManager;
-import modele.dao.EntityManagerFactorySingleton;
-import modele.metier.Visiteur;
-import modele.dao.DaoVisiteurJPA;
+import Vue.*;
+import javax.swing.JOptionPane;
+import modele.metier.*;
+import modele.dao.*;
 
 /**
  *
@@ -21,6 +20,8 @@ import modele.dao.DaoVisiteurJPA;
 public class CtrlVisiteurs extends CtrlAbstrait{
     private VueVisiteurs vue;
     private List<Visiteur> lesVisiteurs;
+    private List<Secteur> lesSecteurs;
+    private List<Labo> lesLabos;
     private int indiceVisiteurCourant;
     private Visiteur visiteurCourant;
     EntityManager em;
@@ -28,75 +29,118 @@ public class CtrlVisiteurs extends CtrlAbstrait{
     public CtrlVisiteurs(VueVisiteurs vue, VueAbstrait vueA){
         super(vueA);
         this.vue = vue;
-        this.vue.setCtrl(this);
+        this.vue.setControleur(this);
         
         // Gérer la persistance
         em = EntityManagerFactorySingleton.getInstance().createEntityManager();
         em.getTransaction().begin();
         
-        //préparation de l'état initial
+        //préparation des combos box
         lesVisiteurs = DaoVisiteurJPA.selectAll(em);
+        lesSecteurs = DaoSecteurJPA.selectAll(em);
+        lesLabos = DaoLaboJPA.selectAll(em);
+        remplissageComboBox(lesVisiteurs, lesSecteurs, lesLabos);
+        
+        
+        //préparation de l'état initial de l'affichage
         indiceVisiteurCourant = 0;
         visiteurCourant = lesVisiteurs.get(indiceVisiteurCourant);
         afficherVisiteur(visiteurCourant);
     }
     
+    public final void actualiser() {
+        try {
+            remplissageComboBox(lesVisiteurs, lesSecteurs, lesLabos);
+            indiceVisiteurCourant = 0;
+            visiteurCourant = lesVisiteurs.get(indiceVisiteurCourant);
+            afficherVisiteur(visiteurCourant);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(getVue(), "CtrlPresence - actualiser - " + ex.getMessage(), "Saisie des présences", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     public void chercher(){
-        
+        String nom = (String) this.vue.getjComboBoxChercher().getSelectedItem();
+        String [] libelle = nom.split(" ", 0);
+        Visiteur unVisiteur = DaoVisiteurJPA.selectOneByLogin(em, libelle[0]);
+        afficherVisiteur(unVisiteur);
     }
     
     public void precedent(){
-        
+        Visiteur leVisiteur = null;
+        for(int i = 0; i<lesVisiteurs.size(); i++){
+            Visiteur unVisiteur = lesVisiteurs.get(i);
+            if(unVisiteur.getNom().equals(this.vue.getjTextFieldNom().getText())){
+                if(i == 0){
+                    leVisiteur = lesVisiteurs.get(lesVisiteurs.size()-1);
+                } else{
+                    leVisiteur = lesVisiteurs.get(i-1);
+                }
+            }
+        }
+        afficherVisiteur(leVisiteur);
     }
     
     public void suivant(){
-        
+        Visiteur leVisiteur = null;
+        for(int i = 0; i<lesVisiteurs.size(); i++){
+            Visiteur unVisiteur = lesVisiteurs.get(i);
+//            System.out.print(i + "-");
+//            System.out.print(lesVisiteurs.size()-1 + "-");
+//            System.out.print(unVisiteur.getNom() + "-");
+//            System.out.print(this.vue.getjTextFieldNom().getText() +"\n");
+            if(unVisiteur.getNom().equals(this.vue.getjTextFieldNom().getText())){
+                if(i == lesVisiteurs.size()-1){
+                    leVisiteur = lesVisiteurs.get(0);
+                } else{
+                    leVisiteur = lesVisiteurs.get(i+1);
+                }
+            }
+        }
+        //System.out.print(leVisiteur);
+        afficherVisiteur(leVisiteur);
     }
     
     public void close(){
-        
+//        this.getCtrlPrincipal().action(EnumAction.VISITEUR_RETOUR);
+        System.exit(0);
+    }
+    
+    public void remplissageComboBox(List<Visiteur> lesVisiteurs, List<Secteur> lesSecteurs, List<Labo> lesLabos){
+        this.vue.getjComboBoxChercher().addItem("");
+        for(int i = 0; i<lesVisiteurs.size(); i++){
+            Visiteur unVisiteur = lesVisiteurs.get(i);
+            this.vue.getjComboBoxChercher().addItem(unVisiteur.getNom() + " " + unVisiteur.getPrenom());
+        }
+        this.vue.getjComboBoxSecteur().addItem("");
+        for(int i = 0; i<lesSecteurs.size(); i++){
+            Secteur unSecteur = lesSecteurs.get(i);
+            this.vue.getjComboBoxSecteur().addItem(unSecteur.getLibelle());
+        }
+        this.vue.getjComboBoxLabo().addItem("");
+        for(int i = 0; i<lesLabos.size(); i++){
+            Labo unLabo = lesLabos.get(i);
+            this.vue.getjComboBoxLabo().addItem(unLabo.getNom());
+        }
     }
     
     public void afficherVisiteur(Visiteur unVisiteur){
         this.vue.getjTextFieldNom().setText(unVisiteur.getNom());
-//        this.getVue().getjTextFieldRue().setText(uneAdresse.getRue());
-//        this.getVue().getjTextFieldCdp().setText(uneAdresse.getCp());
-//        this.getVue().getjTextFieldVille().setText(uneAdresse.getVille());
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VueVisiteurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VueVisiteurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VueVisiteurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VueVisiteurs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        this.vue.getjTextFieldPrenom().setText(unVisiteur.getPrenom());
+        this.vue.getjTextFieldAdresse().setText(unVisiteur.getAdresse());
+        this.vue.getjTextFieldCP().setText(unVisiteur.getCp());
+        this.vue.getjTextFieldVille().setText(unVisiteur.getVille());
+        if(unVisiteur.getCode_sec() != null){
+            this.vue.getjComboBoxSecteur().setSelectedItem(unVisiteur.getCode_sec().getLibelle());
         }
-        //</editor-fold>
+        this.vue.getjComboBoxLabo().setSelectedItem(unVisiteur.getCode_lab().getNom());
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                CtrlAbstrait CtrlA = null;
-                new VueVisiteurs(CtrlA).setVisible(true);
-            }
-        });
+    public VueVisiteurs getVue() {
+        return vue;
+    }
+
+    public void setVue(VueVisiteurs vue) {
+        this.vue = vue;
     }
 }

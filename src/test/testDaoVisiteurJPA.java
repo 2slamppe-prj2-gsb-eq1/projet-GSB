@@ -6,13 +6,13 @@
 
 package test;
 
-import java.util.Calendar;
+
+import javax.persistence.EntityTransaction;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceException;
 import modele.dao.DaoVisiteurJPA;
 import modele.dao.EntityManagerFactorySingleton;
+import modele.metier.Visiteur;
 
 /**
  *
@@ -20,7 +20,10 @@ import modele.dao.EntityManagerFactorySingleton;
  */
 public class testDaoVisiteurJPA {
     public static void main(String[] args) {
-
+        testVerifierLoginMdp();
+        testSelectAll();
+    }
+    public static void testVerifierLoginMdp(){
         EntityManager em;
         boolean resultat;
         String nomVisiteur;
@@ -39,9 +42,31 @@ public class testDaoVisiteurJPA {
         
         System.out.println("\nTest 1-1 - Se connecter sous le login : " + nomVisiteur+" mdp : "+mdpVisiteur);
         resultat = DaoVisiteurJPA.verifierLoginMdp(em, nomVisiteur, mdpVisiteur);
-        System.out.println("\tRésultat : " + resultat );
+        System.out.print("\tRésultat : " + resultat );
         System.out.println("Test 1-1 effectué");
+    }
 
-
+    public static void testSelectAll() {
+        EntityManager em;
+        List<Visiteur> lesVisiteurs;
+        int indiceVisiteurCourant;
+        Visiteur visiteurCourant;
+        
+        // Gérer la persistance
+        em = EntityManagerFactorySingleton.getInstance().createEntityManager();
+        em.getTransaction().begin();
+        
+        // Test 1 - Select All
+        lesVisiteurs = DaoVisiteurJPA.selectAll(em);
+        System.out.println("\nTest 2-1 - SelectAll :");
+        System.out.print("\t" + lesVisiteurs);
+        System.out.println("Test 2-1 effectué");
+        
+        // Test 2 - 1 Visiteur du Select All
+        System.out.println("\nTest 2-2 - Affichage du Visiteur d'indice 1 :");
+        indiceVisiteurCourant = 1;
+        visiteurCourant = lesVisiteurs.get(indiceVisiteurCourant);
+        System.out.print("\t" + visiteurCourant);
+        System.out.println("Test 2-2 effectué");
     }
 }
