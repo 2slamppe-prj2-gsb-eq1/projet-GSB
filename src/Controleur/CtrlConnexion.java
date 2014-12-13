@@ -8,7 +8,6 @@ package Controleur;
 
 import Vue.VueAbstrait;
 import Vue.VueConnexion;
-import java.util.List;
 import javax.persistence.EntityManager;
 import modele.dao.EntityManagerFactorySingleton;
 import modele.dao.DaoVisiteurJPA;
@@ -38,13 +37,25 @@ public class CtrlConnexion extends CtrlAbstrait{
         //vérification vers la bdd oracle en JPA
         connexion = DaoVisiteurJPA.verifierLoginMdp(em, login, mdp);
         if(connexion){
-            
+            //System.out.print("connexion réussi");
+            CtrlPrincipal ctrlP = new CtrlPrincipal();
+            ctrlP.action(EnumAction.AFFICHER_MENU);
         } else{
-            
+            System.out.print("connexion non établi");
         }       
     }
     
     public void quitter(){
-        
+        CtrlPrincipal ctrlP = new CtrlPrincipal();
+        ctrlP.action(EnumAction.MENU_FICHIER_QUITTER);
     }
+
+    public VueConnexion getVue() {
+        return vue;
+    }
+
+    public void setVue(VueConnexion vue) {
+        this.vue = vue;
+    }
+    
 }

@@ -39,10 +39,15 @@ public class Main {
         }
         //</editor-fold>
 
-        VueAbstrait vueA = null;
+        /*VueAbstrait vueA = null;
         CtrlAbstrait CtrlA = null;
         VueConnexion vue = new VueConnexion(CtrlA);
         CtrlConnexion ctrl = new CtrlConnexion(vue, vueA);
-        vue.setVisible(true);
+        vue.setVisible(true);*/
+        
+        // Pour lancer l'application, instancier le contrôleur principal
+        CtrlPrincipal ctrlPrincipal;
+        ctrlPrincipal = new CtrlPrincipal();
+        ctrlPrincipal.action();
     }
 }

@@ -94,21 +94,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Visiteurs"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxVisiteursActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxPracticiens">
       <Properties>
         <Property name="text" type="java.lang.String" value="Practiciens"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxPracticiensActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxMedicaments">
       <Properties>
         <Property name="text" type="java.lang.String" value="Medicaments"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxMedicamentsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxQuit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Quitter"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxQuitActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.Box$Filler" name="filler1">
     </Component>

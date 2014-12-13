@@ -102,8 +102,7 @@ public class CtrlVisiteurs extends CtrlAbstrait{
     }
     
     public void close(){
-//        this.getCtrlPrincipal().action(EnumAction.VISITEUR_RETOUR);
-        System.exit(0);
+        this.vue.setVisible(false);
     }
     
     public void remplissageComboBox(List<Visiteur> lesVisiteurs, List<Secteur> lesSecteurs, List<Labo> lesLabos){

@@ -7,6 +7,7 @@
 package Controleur;
 
 import Vue.VueAbstrait;
+
 /**
  *
  * @author btssio
@@ -14,6 +15,7 @@ import Vue.VueAbstrait;
 public abstract class CtrlAbstrait {
     // associations
     protected VueAbstrait vue=null;
+    private CtrlPrincipal ctrlPrincipal;
     
     public CtrlAbstrait(VueAbstrait vue){
         this.vue=vue;
@@ -21,5 +23,13 @@ public abstract class CtrlAbstrait {
     
     public VueAbstrait getVue(){
         return vue;
+    }
+    
+    public CtrlPrincipal getCtrlPrincipal() {
+        return ctrlPrincipal;
+    }
+
+    public void setCtrlPrincipal(CtrlPrincipal ctrlPrincipal) {
+        this.ctrlPrincipal = ctrlPrincipal;
     }
 }

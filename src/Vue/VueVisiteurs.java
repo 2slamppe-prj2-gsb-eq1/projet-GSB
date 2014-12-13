@@ -246,7 +246,6 @@ public class VueVisiteurs extends VueAbstrait {
 
     private void jButtonSuivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuivActionPerformed
         ((CtrlVisiteurs)controleur).suivant();
-        //System.out.print("coucou");
     }//GEN-LAST:event_jButtonSuivActionPerformed
 
     private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed

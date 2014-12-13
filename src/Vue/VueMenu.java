@@ -6,17 +6,25 @@
 
 package Vue;
 
+import Controleur.CtrlAbstrait;
+import Controleur.CtrlMenu;
+import javax.swing.JCheckBox;
+
 /**
  *
  * @author btssio
  */
-public class VueMenu extends javax.swing.JFrame {
-
+public class VueMenu extends VueAbstrait {
+    
+    protected CtrlMenu ctrlM;
     /**
      * Creates new form Vue_Menu
      */
-    public VueMenu() {
+    public VueMenu(CtrlAbstrait ctrlA) {
+        super(ctrlA);
         initComponents();
+        VueAbstrait vueA = null;
+        this.ctrlM = new CtrlMenu(this, vueA);
     }
 
     /**
@@ -48,12 +56,32 @@ public class VueMenu extends javax.swing.JFrame {
         });
 
         jCheckBoxVisiteurs.setText("Visiteurs");
+        jCheckBoxVisiteurs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxVisiteursActionPerformed(evt);
+            }
+        });
 
         jCheckBoxPracticiens.setText("Practiciens");
+        jCheckBoxPracticiens.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxPracticiensActionPerformed(evt);
+            }
+        });
 
         jCheckBoxMedicaments.setText("Medicaments");
+        jCheckBoxMedicaments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMedicamentsActionPerformed(evt);
+            }
+        });
 
         jCheckBoxQuit.setText("Quitter");
+        jCheckBoxQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxQuitActionPerformed(evt);
+            }
+        });
 
         jLabelTitre.setText("Gestion des comptes rendus");
 
@@ -110,44 +138,68 @@ public class VueMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void jCheckBoxComptesRendusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxComptesRendusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxComptesRendusActionPerformed
+    private void jCheckBoxVisiteursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxVisiteursActionPerformed
+        this.getCtrlM().afficherVisiteur();
+    }//GEN-LAST:event_jCheckBoxVisiteursActionPerformed
+    private void jCheckBoxPracticiensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPracticiensActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxPracticiensActionPerformed
+    private void jCheckBoxMedicamentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMedicamentsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxMedicamentsActionPerformed
+    private void jCheckBoxQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxQuitActionPerformed
+        this.getCtrlM().close();
+    }//GEN-LAST:event_jCheckBoxQuitActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VueMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VueMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VueMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VueMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    public CtrlMenu getCtrlM() {
+        return ctrlM;
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VueMenu().setVisible(true);
-            }
-        });
+    public void setCtrlM(CtrlMenu ctrlM) {
+        this.ctrlM = ctrlM;
+    }
+
+    public JCheckBox getjCheckBoxComptesRendus() {
+        return jCheckBoxComptesRendus;
+    }
+
+    public void setjCheckBoxComptesRendus(JCheckBox jCheckBoxComptesRendus) {
+        this.jCheckBoxComptesRendus = jCheckBoxComptesRendus;
+    }
+
+    public JCheckBox getjCheckBoxMedicaments() {
+        return jCheckBoxMedicaments;
+    }
+
+    public void setjCheckBoxMedicaments(JCheckBox jCheckBoxMedicaments) {
+        this.jCheckBoxMedicaments = jCheckBoxMedicaments;
+    }
+
+    public JCheckBox getjCheckBoxPracticiens() {
+        return jCheckBoxPracticiens;
+    }
+
+    public void setjCheckBoxPracticiens(JCheckBox jCheckBoxPracticiens) {
+        this.jCheckBoxPracticiens = jCheckBoxPracticiens;
+    }
+
+    public JCheckBox getjCheckBoxQuit() {
+        return jCheckBoxQuit;
+    }
+
+    public void setjCheckBoxQuit(JCheckBox jCheckBoxQuit) {
+        this.jCheckBoxQuit = jCheckBoxQuit;
+    }
+
+    public JCheckBox getjCheckBoxVisiteurs() {
+        return jCheckBoxVisiteurs;
+    }
+
+    public void setjCheckBoxVisiteurs(JCheckBox jCheckBoxVisiteurs) {
+        this.jCheckBoxVisiteurs = jCheckBoxVisiteurs;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

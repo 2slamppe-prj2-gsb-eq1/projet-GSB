@@ -6,8 +6,9 @@
 
 package Vue;
 
-import Controleur.CtrlConnexion;
 import Controleur.CtrlAbstrait;
+import Controleur.CtrlConnexion;
+import Controleur.EnumAction;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -27,7 +28,9 @@ public class VueConnexion extends VueAbstrait {
      */
     public VueConnexion(CtrlAbstrait ctrlA) {
         super(ctrlA);
-        initComponents();        
+        initComponents();
+        VueAbstrait vueA = null;
+        this.ctrl = new CtrlConnexion(this, vueA);
     }
 
     /**
@@ -123,6 +126,7 @@ public class VueConnexion extends VueAbstrait {
 
     private void jButtonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderActionPerformed
         this.ctrl.valider();
+        //this.ctrl.getCtrlPrincipal().action(EnumAction.AFFICHER_MENU);
     }//GEN-LAST:event_jButtonValiderActionPerformed
 
     private void jButtonQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitterActionPerformed
