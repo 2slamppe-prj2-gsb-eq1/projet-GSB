@@ -34,27 +34,27 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMotifVisite" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelEffetIndesirable" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelPraticien" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelNumeroRapport" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelDateRapport" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextFieldMotifVis" min="-2" pref="178" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldNumRapport" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxPracticien" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldDateRapport" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jTextFieldMotifVis" pref="178" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldDateRapport" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jComboBoxPracticien" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldNumRapport" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="202" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelContreIndications" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="197" max="-2" attributes="0"/>
                           </Group>
@@ -86,22 +86,22 @@
               <Component id="jPanelTitre" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNumeroRapport" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldNumRapport" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelPraticien" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jComboBoxPracticien" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelDateRapport" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldDateRapport" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelMotifVisite" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldMotifVis" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -109,10 +109,10 @@
                   <Component id="jScrollPane2" pref="182" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelEffetIndesirable" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
-                  <Component id="jLabel5" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                  <Component id="jLabelContreIndications" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="60" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -167,35 +167,29 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="jLabelPraticien">
       <Properties>
         <Property name="text" type="java.lang.String" value="Practicien"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="jLabelMotifVisite">
       <Properties>
         <Property name="text" type="java.lang.String" value="Motif Visite"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="jLabelEffetIndesirable">
       <Properties>
         <Property name="text" type="java.lang.String" value="Effets ind&#xe9;sirables"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="jLabelContreIndications">
       <Properties>
         <Property name="text" type="java.lang.String" value="Contre indications"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldDateRapport">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldMotifVis">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonPrevious">
       <Properties>
@@ -206,26 +200,20 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Suivant"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNextActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonClose">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fermer"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="jLabelDateRapport">
       <Properties>
         <Property name="text" type="java.lang.String" value="Date Rapport"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNumRapport">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField6"/>
-      </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="jLabelNumeroRapport">
       <Properties>
         <Property name="text" type="java.lang.String" value="Num&#xe9;ro Rapport"/>
       </Properties>
@@ -233,12 +221,7 @@
     <Component class="javax.swing.JComboBox" name="jComboBoxPracticien">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+          <StringArray count="0"/>
         </Property>
       </Properties>
     </Component>

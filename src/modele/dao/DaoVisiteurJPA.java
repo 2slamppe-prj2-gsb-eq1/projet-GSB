@@ -41,6 +41,23 @@ public class DaoVisiteurJPA {
     }
 
     /**
+     * selectOneL : lire un enregistrement dans la table Visiteur
+     *
+     * @param em : contexte de persistance
+     * @param nom : nom du visiteur
+     * @param prenom : prenom du visiteur
+     * @return une instance de la classe Visiteur
+     */
+    public static Visiteur selectOneByNomPrenom(EntityManager em, String nom, String prenom) throws PersistenceException {
+        Visiteur visiteur = null;
+        Query query = em.createQuery("select v from Visiteur v where v.nom = :nom and v.prenom = :prenom");
+        query.setParameter("nom", nom);
+        query.setParameter("prenom", prenom);
+        visiteur = (Visiteur) query.getSingleResult();
+        return visiteur;
+    }
+    
+    /**
      * lire tous les enregistrements de la table Visiteur
      *
      * @param em : contexte de persistance

@@ -62,7 +62,7 @@ public class CtrlVisiteurs extends CtrlAbstrait{
     public void chercher(){
         String nom = (String) this.vue.getjComboBoxChercher().getSelectedItem();
         String [] libelle = nom.split(" ", 0);
-        Visiteur unVisiteur = DaoVisiteurJPA.selectOneByLogin(em, libelle[0]);
+        Visiteur unVisiteur = DaoVisiteurJPA.selectOneByNomPrenom(em, libelle[0], libelle[1]);
         afficherVisiteur(unVisiteur);
     }
     
@@ -70,7 +70,7 @@ public class CtrlVisiteurs extends CtrlAbstrait{
         Visiteur leVisiteur = null;
         for(int i = 0; i<lesVisiteurs.size(); i++){
             Visiteur unVisiteur = lesVisiteurs.get(i);
-            if(unVisiteur.getNom().equals(this.vue.getjTextFieldNom().getText())){
+            if(unVisiteur.getNom().equals(this.vue.getjTextFieldNom().getText()) && unVisiteur.getPrenom().equals(this.vue.getjTextFieldPrenom().getText())){
                 if(i == 0){
                     leVisiteur = lesVisiteurs.get(lesVisiteurs.size()-1);
                 } else{
@@ -88,8 +88,8 @@ public class CtrlVisiteurs extends CtrlAbstrait{
 //            System.out.print(i + "-");
 //            System.out.print(lesVisiteurs.size()-1 + "-");
 //            System.out.print(unVisiteur.getNom() + "-");
-//            System.out.print(this.vue.getjTextFieldNom().getText() +"\n");
-            if(unVisiteur.getNom().equals(this.vue.getjTextFieldNom().getText())){
+//            System.out.print(unVisiteur.getPrenom() + "\n");
+            if(unVisiteur.getNom().equals(this.vue.getjTextFieldNom().getText()) && unVisiteur.getPrenom().equals(this.vue.getjTextFieldPrenom().getText())){
                 if(i == lesVisiteurs.size()-1){
                     leVisiteur = lesVisiteurs.get(0);
                 } else{
@@ -97,7 +97,7 @@ public class CtrlVisiteurs extends CtrlAbstrait{
                 }
             }
         }
-        //System.out.print(leVisiteur);
+//        System.out.print(leVisiteur.getCode_sec());
         afficherVisiteur(leVisiteur);
     }
     
@@ -131,6 +131,8 @@ public class CtrlVisiteurs extends CtrlAbstrait{
         this.vue.getjTextFieldVille().setText(unVisiteur.getVille());
         if(unVisiteur.getCode_sec() != null){
             this.vue.getjComboBoxSecteur().setSelectedItem(unVisiteur.getCode_sec().getLibelle());
+        } else{
+            this.vue.getjComboBoxSecteur().setSelectedItem("");
         }
         this.vue.getjComboBoxLabo().setSelectedItem(unVisiteur.getCode_lab().getNom());
     }
