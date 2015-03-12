@@ -37,10 +37,10 @@ public class DaoMedicamentJPA {
      * @return une collection d'instances de la classe Secteur
      */
     public static List<Medicament> selectAll(EntityManager em) throws PersistenceException {
-        List<Medicament> lesMedicament = null;
+        List<Medicament> lesMedicaments = null;
         Query query= em.createQuery("select m from Medicament m");
-        lesMedicament = query.getResultList();
-        return lesMedicament;
+        lesMedicaments = query.getResultList();
+        return lesMedicaments;
     }
     
 }

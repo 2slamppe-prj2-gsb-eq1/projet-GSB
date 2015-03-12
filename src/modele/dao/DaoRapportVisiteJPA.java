@@ -34,10 +34,10 @@ public class DaoRapportVisiteJPA {
      * @return une collection d'instances de la classe Secteur
      */
     public static List<RapportVisite> selectAll(EntityManager em) throws PersistenceException {
-        List<RapportVisite> lesRapportVisite = null;
+        List<RapportVisite> lesRapportVisites = null;
         Query query= em.createQuery("select rv from RapportVisite rv");
-        lesRapportVisite = query.getResultList();
-        return lesRapportVisite;
+        lesRapportVisites = query.getResultList();
+        return lesRapportVisites;
     }
     
 }
