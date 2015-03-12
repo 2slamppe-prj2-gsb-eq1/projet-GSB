@@ -42,6 +42,9 @@ public class CtrlPrincipal {
             case VISITEUR_AFFICHER: // activation de vueVisiteurs depuis vueMenu
                 afficherVisiteurs();
                 break;
+            case COMPTESRENDUS_AFFICHER: //activation de vueComptesRendus depuis vueMenu
+                afficherComptesRendus();
+                break;
             case MENU_FICHIER_QUITTER: // fin de l'application depuis vueMenu
                 menuFichierQuitter();
                 break;
@@ -86,6 +89,26 @@ public class CtrlPrincipal {
         }
         
         //Affichage de la vue Visiteur
+        ctrlVisiteurs.getVue().setVisible(true);
+    }
+    
+    private void afficherComptesRendus(){
+        if (ctrlMenu == null) {
+            VueMenu vueM = new VueMenu(ctrlA);
+            ctrlMenu = new CtrlMenu(vueM, vueA);
+        }
+        if (ctrlVisiteurs == null) {
+            VueVisiteurs vueV = new VueVisiteurs(ctrlA);
+            ctrlVisiteurs = new CtrlVisiteurs(vueV, vueA);
+        } else {
+            // si la le contrôleur et sa vue existent déjà
+            // il faut rafraîchir le contenu à partir de la base de données
+            ctrlVisiteurs.actualiser();
+        }
+        // vuPresence est une fenêtre modale :
+        // -> vueMenu reste visible, mais n'est pas active
+        ctrlMenu.getVue().setEnabled(false);
+        ctrlMenu.getVue().setVisible(false);
         ctrlVisiteurs.getVue().setVisible(true);
     }
 }
