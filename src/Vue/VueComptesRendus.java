@@ -8,6 +8,14 @@ package Vue;
 
 import Controleur.CtrlAbstrait;
 import Controleur.CtrlComptesRendus;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -192,6 +200,184 @@ public class VueComptesRendus extends VueAbstrait {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public CtrlComptesRendus getCtrl() {
+        return ctrlCR;
+    }
+
+    public void setCtrl(CtrlComptesRendus ctrlCR) {
+        this.ctrlCR = ctrlCR;
+    }
+
+    public JButton getjButtonClose() {
+        return jButtonClose;
+    }
+
+    public void setjButtonClose(JButton jButtonClose) {
+        this.jButtonClose = jButtonClose;
+    }
+
+    public JButton getjButtonNew() {
+        return jButtonNew;
+    }
+
+    public void setjButtonNew(JButton jButtonNew) {
+        this.jButtonNew = jButtonNew;
+    }
+
+    public JButton getjButtonNext() {
+        return jButtonNext;
+    }
+
+    public void setjButtonNext(JButton jButtonNext) {
+        this.jButtonNext = jButtonNext;
+    }
+
+    public JButton getjButtonPrevious() {
+        return jButtonPrevious;
+    }
+
+    public void setjButtonPrevious(JButton jButtonPrevious) {
+        this.jButtonPrevious = jButtonPrevious;
+    }
+
+    public JComboBox getjComboBoxPracticien() {
+        return jComboBoxPracticien;
+    }
+
+    public void setjComboBoxPracticien(JComboBox jComboBoxPracticien) {
+        this.jComboBoxPracticien = jComboBoxPracticien;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabelContreIndications() {
+        return jLabelContreIndications;
+    }
+
+    public void setjLabelContreIndications(JLabel jLabelContreIndications) {
+        this.jLabelContreIndications = jLabelContreIndications;
+    }
+
+    public JLabel getjLabelDateRapport() {
+        return jLabelDateRapport;
+    }
+
+    public void setjLabelDateRapport(JLabel jLabelDateRapport) {
+        this.jLabelDateRapport = jLabelDateRapport;
+    }
+
+    public JLabel getjLabelEffetIndesirable() {
+        return jLabelEffetIndesirable;
+    }
+
+    public void setjLabelEffetIndesirable(JLabel jLabelEffetIndesirable) {
+        this.jLabelEffetIndesirable = jLabelEffetIndesirable;
+    }
+
+    public JLabel getjLabelMotifVisite() {
+        return jLabelMotifVisite;
+    }
+
+    public void setjLabelMotifVisite(JLabel jLabelMotifVisite) {
+        this.jLabelMotifVisite = jLabelMotifVisite;
+    }
+
+    public JLabel getjLabelNumeroRapport() {
+        return jLabelNumeroRapport;
+    }
+
+    public void setjLabelNumeroRapport(JLabel jLabelNumeroRapport) {
+        this.jLabelNumeroRapport = jLabelNumeroRapport;
+    }
+
+    public JLabel getjLabelPraticien() {
+        return jLabelPraticien;
+    }
+
+    public void setjLabelPraticien(JLabel jLabelPraticien) {
+        this.jLabelPraticien = jLabelPraticien;
+    }
+
+    public JPanel getjPanelTitre() {
+        return jPanelTitre;
+    }
+
+    public void setjPanelTitre(JPanel jPanelTitre) {
+        this.jPanelTitre = jPanelTitre;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JSplitPane getjSplitPane1() {
+        return jSplitPane1;
+    }
+
+    public void setjSplitPane1(JSplitPane jSplitPane1) {
+        this.jSplitPane1 = jSplitPane1;
+    }
+
+    public JTextArea getjTextAreaContreIndic() {
+        return jTextAreaContreIndic;
+    }
+
+    public void setjTextAreaContreIndic(JTextArea jTextAreaContreIndic) {
+        this.jTextAreaContreIndic = jTextAreaContreIndic;
+    }
+
+    public JTextArea getjTextAreaEffIndesir() {
+        return jTextAreaEffIndesir;
+    }
+
+    public void setjTextAreaEffIndesir(JTextArea jTextAreaEffIndesir) {
+        this.jTextAreaEffIndesir = jTextAreaEffIndesir;
+    }
+
+    public JTextField getjTextFieldDateRapport() {
+        return jTextFieldDateRapport;
+    }
+
+    public void setjTextFieldDateRapport(JTextField jTextFieldDateRapport) {
+        this.jTextFieldDateRapport = jTextFieldDateRapport;
+    }
+
+    public JTextField getjTextFieldMotifVis() {
+        return jTextFieldMotifVis;
+    }
+
+    public void setjTextFieldMotifVis(JTextField jTextFieldMotifVis) {
+        this.jTextFieldMotifVis = jTextFieldMotifVis;
+    }
+
+    public JTextField getjTextFieldNumRapport() {
+        return jTextFieldNumRapport;
+    }
+
+    public void setjTextFieldNumRapport(JTextField jTextFieldNumRapport) {
+        this.jTextFieldNumRapport = jTextFieldNumRapport;
+    }
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonClose;
     private javax.swing.JButton jButtonNew;

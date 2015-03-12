@@ -71,6 +71,12 @@ public class VueConnexion extends VueAbstrait {
 
         jLabelLogin.setText("Login");
 
+        jPasswordFieldMdp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldMdpActionPerformed(evt);
+            }
+        });
+
         jLabelMdp.setText("Mot de passe");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,12 +132,15 @@ public class VueConnexion extends VueAbstrait {
 
     private void jButtonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderActionPerformed
         this.ctrl.valider();
-        //this.ctrl.getCtrlPrincipal().action(EnumAction.AFFICHER_MENU);
     }//GEN-LAST:event_jButtonValiderActionPerformed
 
     private void jButtonQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitterActionPerformed
         this.ctrl.quitter();
     }//GEN-LAST:event_jButtonQuitterActionPerformed
+
+    private void jPasswordFieldMdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldMdpActionPerformed
+        this.ctrl.valider();
+    }//GEN-LAST:event_jPasswordFieldMdpActionPerformed
 
     public CtrlConnexion getCtrl() {
         return ctrl;

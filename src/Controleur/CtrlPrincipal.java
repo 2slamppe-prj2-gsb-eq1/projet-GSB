@@ -107,8 +107,6 @@ public class CtrlPrincipal {
             // il faut rafraîchir le contenu à partir de la base de données
             ctrlComptesRendus.actualiser();
         }
-        // vuPresence est une fenêtre modale :
-        // -> vueMenu reste visible, mais n'est pas active
         ctrlComptesRendus.getVue().setVisible(true);
     }
 }

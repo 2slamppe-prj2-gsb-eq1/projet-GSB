@@ -8,19 +8,37 @@ package Controleur;
 
 import Vue.VueAbstrait;
 import Vue.VueComptesRendus;
+import javax.persistence.EntityManager;
+import modele.dao.EntityManagerFactorySingleton;
 
 /**
  *
  * @author btssio
  */
 public class CtrlComptesRendus extends CtrlAbstrait {
-
+    private VueComptesRendus vue;
+    EntityManager em;
+    
     public CtrlComptesRendus(VueComptesRendus vueCR, VueAbstrait vueA) {
         super(vueA);
+        this.vue = vueCR;
+        this.vue.setCtrl(this);
+        
+        // Gérer la persistance
+        em = EntityManagerFactorySingleton.getInstance().createEntityManager();
+        em.getTransaction().begin();
     }
 
     void actualiser() {
         
+    }
+
+    public VueComptesRendus getVue() {
+        return vue;
+    }
+
+    public void setVue(VueComptesRendus vue) {
+        this.vue = vue;
     }
     
 }
