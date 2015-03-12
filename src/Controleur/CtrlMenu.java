@@ -32,6 +32,9 @@ public class CtrlMenu extends CtrlAbstrait{
     public void afficherVisiteur(){
         CtrlPrincipal ctrlP = new CtrlPrincipal();
         ctrlP.action(EnumAction.VISITEUR_AFFICHER);
+        
+        // Supprime l'affichage de la vue Menu
+        // this.getVue().setVisible(false);
     }
     
     public void close(){

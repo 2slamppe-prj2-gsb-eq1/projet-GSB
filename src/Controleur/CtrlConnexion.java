@@ -40,9 +40,13 @@ public class CtrlConnexion extends CtrlAbstrait{
             //System.out.print("connexion réussi");
             CtrlPrincipal ctrlP = new CtrlPrincipal();
             ctrlP.action(EnumAction.AFFICHER_MENU);
+            
+            // Supprime l'affichage de la vue Connexion
+            // this.getVue().setVisible(false);
         } else{
-            System.out.print("connexion non établi");
-        }       
+            // Affichage du message d'erreur
+            System.out.print("connexion non établi, erreur du login ou du mot de passe");
+        }
     }
     
     public void quitter(){
