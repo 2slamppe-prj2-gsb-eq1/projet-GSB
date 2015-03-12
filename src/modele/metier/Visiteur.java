@@ -1,4 +1,4 @@
-package modele.metier;
+ package modele.metier;
 
 import java.util.Date;
 import javax.persistence.*;
