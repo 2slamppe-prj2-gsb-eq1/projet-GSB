@@ -6,10 +6,21 @@
 
 package Controleur;
 
+import Vue.VueAbstrait;
+import Vue.VueComptesRendus;
+
 /**
  *
  * @author btssio
  */
-public class CtrlComptesRendus {
+public class CtrlComptesRendus extends CtrlAbstrait {
+
+    public CtrlComptesRendus(VueComptesRendus vueCR, VueAbstrait vueA) {
+        super(vueA);
+    }
+
+    void actualiser() {
+        
+    }
     
 }

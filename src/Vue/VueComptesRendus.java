@@ -6,16 +6,22 @@
 
 package Vue;
 
+import Controleur.CtrlAbstrait;
+import Controleur.CtrlComptesRendus;
+
 /**
  *
  * @author btssio
  */
-public class VueComptesRendus extends javax.swing.JFrame {
+public class VueComptesRendus extends VueAbstrait {
+    
+    protected CtrlComptesRendus ctrlCR;
 
     /**
      * Creates new form VueVisiteur
      */
-    public VueComptesRendus() {
+    public VueComptesRendus(CtrlAbstrait ctrlA) {
+        super(ctrlA);
         initComponents();
     }
 

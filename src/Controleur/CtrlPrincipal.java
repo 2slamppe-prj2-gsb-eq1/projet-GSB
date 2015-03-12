@@ -2,6 +2,7 @@ package Controleur;
 
 import static Controleur.EnumAction.*;
 import Vue.VueAbstrait;
+import Vue.VueComptesRendus;
 import Vue.VueConnexion;
 import Vue.VueMenu;
 import Vue.VueVisiteurs;
@@ -18,6 +19,7 @@ public class CtrlPrincipal {
     private CtrlConnexion ctrlConnexion = null;
     private CtrlMenu ctrlMenu = null;
     private CtrlVisiteurs ctrlVisiteurs = null;
+    private CtrlComptesRendus ctrlComptesRendus = null;
     VueAbstrait vueA = null;
     CtrlAbstrait ctrlA = null;
     VueConnexion vueC = new VueConnexion(ctrlA);
@@ -97,18 +99,16 @@ public class CtrlPrincipal {
             VueMenu vueM = new VueMenu(ctrlA);
             ctrlMenu = new CtrlMenu(vueM, vueA);
         }
-        if (ctrlVisiteurs == null) {
-            VueVisiteurs vueV = new VueVisiteurs(ctrlA);
-            ctrlVisiteurs = new CtrlVisiteurs(vueV, vueA);
+        if (ctrlComptesRendus == null) {
+            VueComptesRendus vueCR = new VueComptesRendus(ctrlA);
+            ctrlComptesRendus = new CtrlComptesRendus(vueCR, vueA);
         } else {
             // si la le contrôleur et sa vue existent déjà
             // il faut rafraîchir le contenu à partir de la base de données
-            ctrlVisiteurs.actualiser();
+            ctrlComptesRendus.actualiser();
         }
         // vuPresence est une fenêtre modale :
         // -> vueMenu reste visible, mais n'est pas active
-        ctrlMenu.getVue().setEnabled(false);
-        ctrlMenu.getVue().setVisible(false);
-        ctrlVisiteurs.getVue().setVisible(true);
+        ctrlComptesRendus.getVue().setVisible(true);
     }
 }
