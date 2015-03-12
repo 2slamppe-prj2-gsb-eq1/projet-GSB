@@ -6,6 +6,8 @@
 
 package Vue;
 
+import Controleur.CtrlAbstrait;
+
 /**
  *
  * @author btssio
@@ -17,6 +19,10 @@ public class VueComptesRendus extends javax.swing.JFrame {
      */
     public VueComptesRendus() {
         initComponents();
+    }
+
+    public VueComptesRendus(CtrlAbstrait ctrlA) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
