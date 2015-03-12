@@ -18,10 +18,10 @@ public class DaoLaboJPA {
      * @param code : identifiant technique
      * @return une instance de la classe Labo
      */
-    public static Labo selectOne(EntityManager em, Long code) throws PersistenceException {
+    public static Labo selectOne(EntityManager em, String code_lab) throws PersistenceException {
         Labo unLabo = null;
         // A COMPLETER
-        unLabo = em.find(Labo.class, code);
+        unLabo = em.find(Labo.class, code_lab);
         return unLabo;
     }
     

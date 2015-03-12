@@ -19,7 +19,7 @@ public class DaoRapportVisiteJPA {
      * @param code : identifiant technique
      * @return une instance de la classe Secteur
      */
-    public static RapportVisite selectOnebyID(EntityManager em, Long matricule, RapportVisite RapportVisite) throws PersistenceException {
+    public static RapportVisite selectOnebyID(EntityManager em, String matricule) throws PersistenceException {
         RapportVisite unRapportVisite = null;
         unRapportVisite = em.find(RapportVisite.class, matricule);
         return unRapportVisite;
