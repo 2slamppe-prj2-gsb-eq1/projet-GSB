@@ -12,6 +12,8 @@ import javax.persistence.*;
  *
  * @author btssio
  */
+@Entity
+@Table(name="MEDICAMENT")
 public class Medicament {
     @Id
     @Column(name="MED_DEPOTLEGAL", length=10)

@@ -12,6 +12,8 @@ import javax.persistence.*;
  *
  * @author btssio
  */
+@Entity
+@Table(name="PRATICIEN")
 public class Praticien {
     @Id
     @GeneratedValue

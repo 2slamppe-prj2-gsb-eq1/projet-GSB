@@ -12,6 +12,8 @@ import javax.persistence.*;
  *
  * @author btssio
  */
+@Entity
+@Table(name="TYPE_PRATICIEN")
 public class TypePraticien {
     @Id
     @Column(name="TYP_CODE", length=3)

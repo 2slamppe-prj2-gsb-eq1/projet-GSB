@@ -12,6 +12,8 @@ import javax.persistence.*;
  *
  * @author btssio
  */
+@Entity
+@Table(name="OFFRIR")
 public class Offrir {
     @Id
     @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
