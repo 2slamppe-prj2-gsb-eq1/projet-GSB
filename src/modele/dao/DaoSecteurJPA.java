@@ -19,9 +19,9 @@ public class DaoSecteurJPA {
      * @param code : identifiant technique
      * @return une instance de la classe Secteur
      */
-    public static Secteur selectOne(EntityManager em, Long code) throws PersistenceException {
+    public static Secteur selectOne(EntityManager em, String code_sec) throws PersistenceException {
         Secteur unSecteur = null;
-        unSecteur = em.find(Secteur.class, code);
+        unSecteur = em.find(Secteur.class, code_sec);
         return unSecteur;
     }
     
