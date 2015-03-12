@@ -5,6 +5,7 @@ import Vue.VueAbstrait;
 import Vue.VueComptesRendus;
 import Vue.VueConnexion;
 import Vue.VueMenu;
+import Vue.VuePraticiens;
 import Vue.VueVisiteurs;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,7 @@ public class CtrlPrincipal {
     private CtrlMenu ctrlMenu = null;
     private CtrlVisiteurs ctrlVisiteurs = null;
     private CtrlComptesRendus ctrlComptesRendus = null;
+    private CtrlPraticiens ctrlPraticiens = null;
     VueAbstrait vueA = null;
     CtrlAbstrait ctrlA = null;
     VueConnexion vueC = new VueConnexion(ctrlA);
@@ -46,6 +48,9 @@ public class CtrlPrincipal {
                 break;
             case COMPTESRENDUS_AFFICHER: //activation de vueComptesRendus depuis vueMenu
                 afficherComptesRendus();
+                break;
+            case PRATICIENS_AFFICHER: //activation de vuePraticiens depuis vueMenu
+                afficherPraticiens();
                 break;
             case MENU_FICHIER_QUITTER: // fin de l'application depuis vueMenu
                 menuFichierQuitter();
@@ -108,5 +113,21 @@ public class CtrlPrincipal {
             ctrlComptesRendus.actualiser();
         }
         ctrlComptesRendus.getVue().setVisible(true);
+    }
+    
+    private void afficherPraticiens(){
+        if (ctrlMenu == null) {
+            VueMenu vueM = new VueMenu(ctrlA);
+            ctrlMenu = new CtrlMenu(vueM, vueA);
+        }
+        if (ctrlPraticiens == null) {
+            VuePraticiens vueP = new VuePraticiens(ctrlA);
+            ctrlPraticiens = new CtrlPraticiens(vueP, vueA);
+        } else {
+            // si la le contrôleur et sa vue existent déjà
+            // il faut rafraîchir le contenu à partir de la base de données
+            ctrlPraticiens.actualiser();
+        }
+        ctrlPraticiens.getVue().setVisible(true);
     }
 }

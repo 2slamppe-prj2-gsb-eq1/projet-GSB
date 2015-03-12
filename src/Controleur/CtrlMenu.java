@@ -54,4 +54,9 @@ public class CtrlMenu extends CtrlAbstrait{
         ctrlP.action(EnumAction.COMPTESRENDUS_AFFICHER); 
     }
     
+    public void afficherPraticiens(){
+        CtrlPrincipal ctrlP = new CtrlPrincipal();
+        ctrlP.action(EnumAction.PRATICIENS_AFFICHER); 
+    }
+    
 }

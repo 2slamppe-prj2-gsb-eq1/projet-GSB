@@ -6,17 +6,236 @@
 
 package Vue;
 
+import Controleur.CtrlAbstrait;
+import Controleur.CtrlPraticiens;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JSplitPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author btssio
  */
-public class VuePracticiens extends javax.swing.JFrame {
-
+public class VuePraticiens extends VueAbstrait {
+    protected CtrlPraticiens ctrlP;
     /**
      * Creates new form VueVisiteur
      */
-    public VuePracticiens() {
+    public VuePraticiens(CtrlAbstrait ctrlA) {
+        super(ctrlA);
         initComponents();
+    }
+
+    public JButton getjButtonClose() {
+        return jButtonClose;
+    }
+
+    public void setjButtonClose(JButton jButtonClose) {
+        this.jButtonClose = jButtonClose;
+    }
+
+    public JButton getjButtonNext() {
+        return jButtonNext;
+    }
+
+    public void setjButtonNext(JButton jButtonNext) {
+        this.jButtonNext = jButtonNext;
+    }
+
+    public JButton getjButtonOK() {
+        return jButtonOK;
+    }
+
+    public void setjButtonOK(JButton jButtonOK) {
+        this.jButtonOK = jButtonOK;
+    }
+
+    public JButton getjButtonPrevious() {
+        return jButtonPrevious;
+    }
+
+    public void setjButtonPrevious(JButton jButtonPrevious) {
+        this.jButtonPrevious = jButtonPrevious;
+    }
+
+    public JComboBox getjComboBoxLieuExe() {
+        return jComboBoxLieuExe;
+    }
+
+    public void setjComboBoxLieuExe(JComboBox jComboBoxLieuExe) {
+        this.jComboBoxLieuExe = jComboBoxLieuExe;
+    }
+
+    public JComboBox getjComboBoxSearch() {
+        return jComboBoxSearch;
+    }
+
+    public CtrlPraticiens getCtrl() {
+        return ctrlP;
+    }
+
+    public void setCtrl(CtrlPraticiens ctrlP) {
+        this.ctrlP = ctrlP;
+    }
+
+    public void setjComboBoxSearch(JComboBox jComboBoxSearch) {
+        this.jComboBoxSearch = jComboBoxSearch;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanelTitre() {
+        return jPanelTitre;
+    }
+
+    public void setjPanelTitre(JPanel jPanelTitre) {
+        this.jPanelTitre = jPanelTitre;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JSplitPane getjSplitPane1() {
+        return jSplitPane1;
+    }
+
+    public void setjSplitPane1(JSplitPane jSplitPane1) {
+        this.jSplitPane1 = jSplitPane1;
+    }
+
+    public JTextField getjTextFieldAdresse() {
+        return jTextFieldAdresse;
+    }
+
+    public void setjTextFieldAdresse(JTextField jTextFieldAdresse) {
+        this.jTextFieldAdresse = jTextFieldAdresse;
+    }
+
+    public JTextField getjTextFieldCoefNot() {
+        return jTextFieldCoefNot;
+    }
+
+    public void setjTextFieldCoefNot(JTextField jTextFieldCoefNot) {
+        this.jTextFieldCoefNot = jTextFieldCoefNot;
+    }
+
+    public JTextField getjTextFieldNom() {
+        return jTextFieldNom;
+    }
+
+    public void setjTextFieldNom(JTextField jTextFieldNom) {
+        this.jTextFieldNom = jTextFieldNom;
+    }
+
+    public JTextField getjTextFieldNum() {
+        return jTextFieldNum;
+    }
+
+    public void setjTextFieldNum(JTextField jTextFieldNum) {
+        this.jTextFieldNum = jTextFieldNum;
+    }
+
+    public JTextField getjTextFieldPrenom() {
+        return jTextFieldPrenom;
+    }
+
+    public void setjTextFieldPrenom(JTextField jTextFieldPrenom) {
+        this.jTextFieldPrenom = jTextFieldPrenom;
+    }
+
+    public JTextField getjTextFieldVilleCP() {
+        return jTextFieldVilleCP;
+    }
+
+    public void setjTextFieldVilleCP(JTextField jTextFieldVilleCP) {
+        this.jTextFieldVilleCP = jTextFieldVilleCP;
+    }
+
+    public JTextField getjTextFieldVilleNom() {
+        return jTextFieldVilleNom;
+    }
+
+    public void setjTextFieldVilleNom(JTextField jTextFieldVilleNom) {
+        this.jTextFieldVilleNom = jTextFieldVilleNom;
     }
 
     /**
@@ -231,40 +450,6 @@ public class VuePracticiens extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VuePracticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VuePracticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VuePracticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VuePracticiens.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VuePracticiens().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonClose;

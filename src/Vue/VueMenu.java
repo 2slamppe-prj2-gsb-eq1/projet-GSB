@@ -145,7 +145,7 @@ public class VueMenu extends VueAbstrait {
         this.getCtrlM().afficherVisiteur();
     }//GEN-LAST:event_jCheckBoxVisiteursActionPerformed
     private void jCheckBoxPracticiensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPracticiensActionPerformed
-        // TODO add your handling code here:
+        this.getCtrlM().afficherPraticiens();
     }//GEN-LAST:event_jCheckBoxPracticiensActionPerformed
     private void jCheckBoxMedicamentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMedicamentsActionPerformed
         // TODO add your handling code here:
