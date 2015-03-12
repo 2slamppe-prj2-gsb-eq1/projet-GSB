@@ -139,7 +139,7 @@ public class VueMenu extends VueAbstrait {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void jCheckBoxComptesRendusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxComptesRendusActionPerformed
-        // TODO add your handling code here:
+        this.getCtrlM().afficherComptesRendus();
     }//GEN-LAST:event_jCheckBoxComptesRendusActionPerformed
     private void jCheckBoxVisiteursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxVisiteursActionPerformed
         this.getCtrlM().afficherVisiteur();

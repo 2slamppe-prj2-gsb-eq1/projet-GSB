@@ -46,4 +46,9 @@ public class CtrlMenu extends CtrlAbstrait{
         this.vue = vue;
     }
     
+    public void afficherComptesRendus(){
+        CtrlPrincipal ctrlP = new CtrlPrincipal();
+        ctrlP.action(EnumAction.COMPTESRENDUS_AFFICHER); 
+    }
+    
 }
