@@ -29,7 +29,8 @@ public class CtrlPrincipal {
         if (ctrlConnexion == null) {
             ctrlConnexion = new CtrlConnexion(vueC, vueA);
         }
-        ctrlConnexion.getVue().setEnabled(true);
+        
+        //Affichage de la Vue Connexion
         ctrlConnexion.getVue().setVisible(true);
     }
 
@@ -65,10 +66,8 @@ public class CtrlPrincipal {
         }
         VueMenu vueM = new VueMenu(ctrlA);
         ctrlMenu = new CtrlMenu(vueM, vueA);
-        // vuPresence est une fenêtre modale :
-        // -> vueMenu reste visible, mais n'est pas active
-        ctrlConnexion.getVue().setEnabled(false);
-        ctrlConnexion.getVue().setVisible(false);
+        
+        // Affichage de la vue Menu
         ctrlMenu.getVue().setVisible(true);
     }
     
@@ -85,10 +84,8 @@ public class CtrlPrincipal {
             // il faut rafraîchir le contenu à partir de la base de données
             ctrlVisiteurs.actualiser();
         }
-        // vuPresence est une fenêtre modale :
-        // -> vueMenu reste visible, mais n'est pas active
-        ctrlMenu.getVue().setEnabled(false);
-        ctrlMenu.getVue().setVisible(false);
+        
+        //Affichage de la vue Visiteur
         ctrlVisiteurs.getVue().setVisible(true);
     }
 }
