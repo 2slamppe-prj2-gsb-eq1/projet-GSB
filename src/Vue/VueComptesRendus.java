@@ -7,22 +7,22 @@
 package Vue;
 
 import Controleur.CtrlAbstrait;
+import Controleur.CtrlComptesRendus;
 
 /**
  *
  * @author btssio
  */
-public class VueComptesRendus extends javax.swing.JFrame {
+public class VueComptesRendus extends VueAbstrait {
+    
+    protected CtrlComptesRendus ctrlCR;
 
     /**
      * Creates new form VueVisiteur
      */
-    public VueComptesRendus() {
-        initComponents();
-    }
-
     public VueComptesRendus(CtrlAbstrait ctrlA) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super(ctrlA);
+        initComponents();
     }
 
     /**
