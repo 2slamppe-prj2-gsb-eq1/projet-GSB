@@ -316,10 +316,25 @@ public class VuePraticiens extends VueAbstrait {
         jComboBoxLieuExe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "item1", "item2", "item3" }));
 
         jButtonPrevious.setText("Précédent");
+        jButtonPrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPreviousActionPerformed(evt);
+            }
+        });
 
         jButtonNext.setText("Suivant");
+        jButtonNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNextActionPerformed(evt);
+            }
+        });
 
         jButtonClose.setText("Fermer");
+        jButtonClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCloseActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Numéro");
 
@@ -335,6 +350,11 @@ public class VuePraticiens extends VueAbstrait {
         });
 
         jButtonOK.setText("Ok");
+        jButtonOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOKActionPerformed(evt);
+            }
+        });
 
         jTextFieldCoefNot.setText("jTextField7");
 
@@ -456,6 +476,22 @@ public class VuePraticiens extends VueAbstrait {
     private void jComboBoxSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxSearchActionPerformed
+
+    private void jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOKActionPerformed
+        ((CtrlPraticiens)controleur).chercher();
+    }//GEN-LAST:event_jButtonOKActionPerformed
+
+    private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
+        ((CtrlPraticiens)controleur).suivant();
+    }//GEN-LAST:event_jButtonNextActionPerformed
+
+    private void jButtonPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPreviousActionPerformed
+        ((CtrlPraticiens)controleur).precedent();
+    }//GEN-LAST:event_jButtonPreviousActionPerformed
+
+    private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
+        ((CtrlPraticiens)controleur).close();
+    }//GEN-LAST:event_jButtonCloseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
