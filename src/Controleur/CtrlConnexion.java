@@ -20,7 +20,6 @@ import modele.dao.EntityManagerFactorySingleton;
 public class CtrlConnexion extends CtrlAbstrait{
     public VueConnexion vue;
     public boolean connexion;
-    private String login;
     EntityManager em;
     
     public CtrlConnexion(VueConnexion vue, VueAbstrait vueA) {
@@ -33,7 +32,7 @@ public class CtrlConnexion extends CtrlAbstrait{
     public void valider(){
         
         // récupération du login et mot de passe pour vérification
-        String login = getLogin();
+        String login = vue.getjTextFieldLogin().getText();
         String mdp = vue.getjPasswordFieldMdp().getText();
         
         //vérification vers la bdd oracle en JPA
@@ -63,10 +62,6 @@ public class CtrlConnexion extends CtrlAbstrait{
 
     public void setVue(VueConnexion vue) {
         this.vue = vue;
-    }
-
-    public static String getLogin() {
-        return login;
     }
     
 }

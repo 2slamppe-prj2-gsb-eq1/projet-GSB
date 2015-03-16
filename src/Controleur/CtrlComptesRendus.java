@@ -51,10 +51,10 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         // récupération du login du visiteur
         // System.out.println(loginVisiteur);
         //leVisiteur = DaoVisiteurJPA.selectOneByLogin(em, loginVisiteur);
-        
+        leVisiteur = DaoVisiteurJPA.selectOneByLogin(em, "swiss");
         // récupération des rapports visites
-        //lesRapportsVisites = DaoRapportVisiteJPA.selectOneByVisiteur(em, leVisiteur);
-        //System.out.println(lesRapportsVisites);
+        lesRapportsVisites = DaoRapportVisiteJPA.selectOneByVisiteur(em, leVisiteur);
+        System.out.println(lesRapportsVisites);
         
         // Ne pas afficher le bouton sauvegarder
         this.vue.getjButtonSauvegarder().setVisible(false);
