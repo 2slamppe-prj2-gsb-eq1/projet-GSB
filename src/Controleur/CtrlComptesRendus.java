@@ -27,6 +27,10 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         // Gérer la persistance
         em = EntityManagerFactorySingleton.getInstance().createEntityManager();
         em.getTransaction().begin();
+        
+        
+        // Ne pas afficher le bouton sauvegarder
+        this.vue.getjButtonSauvegarder().setVisible(false);
     }
 
     public void actualiser() {
@@ -34,7 +38,11 @@ public class CtrlComptesRendus extends CtrlAbstrait {
     }
     
     public void nouveauRapport(){
-        this.vue.getjButtonNew().setVisible(false);
+        this.vue.getjButtonSauvegarder().setVisible(true);
+    }
+    
+    public void sauvegarderRapport(){
+        this.vue.getjButtonSauvegarder().setVisible(false);
     }
     
     public void close(){

@@ -254,7 +254,7 @@ public class VueComptesRendus extends VueAbstrait {
     }//GEN-LAST:event_jButtonNewActionPerformed
 
     private void jButtonSauvegarderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSauvegarderActionPerformed
-        // TODO add your handling code here:
+        ctrlCR.sauvegarderRapport();
     }//GEN-LAST:event_jButtonSauvegarderActionPerformed
 
     private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
