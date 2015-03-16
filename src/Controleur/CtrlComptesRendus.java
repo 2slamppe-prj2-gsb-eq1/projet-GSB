@@ -8,8 +8,11 @@ package Controleur;
 
 import Vue.VueAbstrait;
 import Vue.VueComptesRendus;
+import java.util.List;
 import javax.persistence.EntityManager;
 import modele.dao.EntityManagerFactorySingleton;
+import modele.metier.*;
+import modele.dao.*;
 
 /**
  *
@@ -18,6 +21,7 @@ import modele.dao.EntityManagerFactorySingleton;
 public class CtrlComptesRendus extends CtrlAbstrait {
     private VueComptesRendus vue;
     EntityManager em;
+    private List<Praticien> lesPraticiens;
     
     public CtrlComptesRendus(VueComptesRendus vueCR, VueAbstrait vueA) {
         super(vueA);
@@ -28,6 +32,18 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         em = EntityManagerFactorySingleton.getInstance().createEntityManager();
         em.getTransaction().begin();
         
+        // récupération des praticiens pour l'affichage dans la combobox praticien
+        lesPraticiens = DaoPraticienJPA.selectAll(em);
+        
+        //ajout d'un item vide dans la combobox praticien
+        this.vue.getjComboBoxPracticien().addItem("");
+        
+        // boucle pour placer tous les praticiens dans la combobox praticien
+        for(int i = 0; i<lesPraticiens.size(); i++){
+            Praticien lePraticien = lesPraticiens.get(i);
+            // ajout du nom et du prénom du praticien dans la combobox praticien
+            this.vue.getjComboBoxPracticien().addItem(lePraticien.getNom() + " " + lePraticien.getPrenom());
+        }
         
         // Ne pas afficher le bouton sauvegarder
         this.vue.getjButtonSauvegarder().setVisible(false);

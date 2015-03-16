@@ -15,7 +15,7 @@ import modele.metier.Praticien;
  *
  * @author btssio
  */
-public class DaoPraticien {
+public class DaoPraticienJPA {
     
     public static Praticien selectOne(EntityManager em, int numero)throws PersistenceException {
      
