@@ -12,9 +12,11 @@ import javax.persistence.Query;
 import modele.metier.Praticien;
 
 /**
- *
- * @author btssio
- */
+     * selectOne : lire un enregistrement dans la table Praticien
+     * @param em : contexte de persistance
+     * @param numero : identifiant technique
+     * @return une instance de la classe Praticien
+     */
 public class DaoPraticienJPA {
     
     public static Praticien selectOne(EntityManager em, int numero)throws PersistenceException {
@@ -26,10 +28,10 @@ public class DaoPraticienJPA {
     }  
     
         /**
-     * lire tous les enregistrements de la table Visiteur
-     *
+     * lire tous les enregistrements de la table Praticien
+     * selectALL: Lire tous les enregistrements dans la table Praticien
      * @param em : contexte de persistance
-     * @return une collection d'instances de la classe visiteur
+     * @return une collection d'instances de la classe Praticien
      */
     
     public static List<Praticien> selectAll(EntityManager em) throws PersistenceException {

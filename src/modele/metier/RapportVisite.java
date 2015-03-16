@@ -10,7 +10,12 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- *
+ * @param matricule : identifiant technique
+ * @param numero_rap : identifiant technique
+ * @param numero : identifiant technique
+ * @param date_rap : identifiant technique
+ * @param bilan_rap : identifiant technique
+ * @param motif_rap : identifiant technique
  * @author btssio
  */
 @Entity
@@ -82,7 +87,10 @@ public class RapportVisite {
     public void setMotif_rap(String motif_rap) {
         this.motif_rap = motif_rap;
     }
-
+    
+/* @return une instance de la classe RapportVisite
+ * @Override Retourne tous les identifiants de la table RapportVisite
+ */
     @Override
     public String toString() {
         return "RapportVisite{" + "matricule=" + matricule + ", numero_rap=" + numero_rap + ", numero=" + numero + ", date_rap=" + date_rap + ", bilan_rap=" + bilan_rap + ", motif_rap=" + motif_rap + '}';

@@ -15,12 +15,10 @@ import modele.metier.Medicament;
 public class DaoMedicamentJPA {
 
     /**
-     * selectOne : lire un enregistrement dans la table Secteur
-     *
+     * selectOne : lire un enregistrement dans la table Medicament
      * @param em : contexte de persistance
-     * @param code : identifiant technique
- 
-     * @return une instance de la classe Secteur
+     * @param depotlegal : identifiant technique
+     * @return une instance de la classe Medicament
      */
     public static Medicament selectOnebyID(EntityManager em, String depotlegal) throws PersistenceException {
         Medicament unMedicament = null;
@@ -31,10 +29,10 @@ public class DaoMedicamentJPA {
   
 
     /**
-     * lire tous les enregistrements de la table Secteur
-     *
+     * lire tous les enregistrements de la table Medicament
+     * selectAll: Lire tous les enregistrements dans la table Medicament
      * @param em : contexte de persistance
-     * @return une collection d'instances de la classe Secteur
+     * @return une collection d'instances de la classe Medicament
      */
     public static List<Medicament> selectAll(EntityManager em) throws PersistenceException {
         List<Medicament> lesMedicaments = null;

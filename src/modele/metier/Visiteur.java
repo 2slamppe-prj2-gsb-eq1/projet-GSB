@@ -10,7 +10,15 @@ import javax.persistence.*;
  */
 
 /**
- *
+ * @param matricule : identifiant technique
+ * @param nom : identifiant technique
+ * @param prenom : identifiant technique
+ * @param adresse : identifiant technique
+ * @param cp : identifiant technique
+ * @param ville : identifiant technique
+ * @param dateEmbauche : identifiant technique
+ * @param code_sec : identifiant technique
+ * @param code_lab : identifiant technique
  * @author btssio
  */
 @Entity
@@ -112,6 +120,9 @@ public class Visiteur {
         this.code_lab = code_lab;
     }
 
+ /* @return une instance de la classe Visiteur
+ * @Override Retourne tous les identifiants de la table Visiteur
+ */
     @Override
     public String toString() {
         return "\n\tVisiteur{" + "matricule=" + matricule + ", nom=" + nom + ", prenom=" + prenom + 

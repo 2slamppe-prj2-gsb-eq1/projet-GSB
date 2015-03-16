@@ -9,7 +9,9 @@ import javax.persistence.*;
 
 
 /**
- *
+ *@param code_lab : identifiant technique
+ * @param nom : identifiant technique
+ * @param chefVente : identifiant technique
  * @author btssio
  */
 @Entity

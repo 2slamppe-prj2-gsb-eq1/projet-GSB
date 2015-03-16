@@ -6,6 +6,7 @@
 
 package Vue;
 
+// on importe les fonctions public de CtrlAbstrait et de CtrlPracticiens
 import Controleur.CtrlAbstrait;
 import Controleur.CtrlPraticiens;
 import javax.swing.JButton;
@@ -16,10 +17,7 @@ import javax.swing.JSeparator;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author btssio
- */
+// Recupère les associations de VueAbstrait
 public class VuePraticiens extends VueAbstrait {
     protected CtrlPraticiens ctrlP;
     /**

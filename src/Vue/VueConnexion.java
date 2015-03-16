@@ -5,6 +5,7 @@
  */
 
 package Vue;
+// on importe les fonctions public de CtrlAbstrait et de CtrlConnexion
 
 import Controleur.CtrlAbstrait;
 import Controleur.CtrlConnexion;
@@ -15,15 +16,12 @@ import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
-/**
- *
- * @author btssio
- */
+// Recupère les associations de VueAbstrait
 public class VueConnexion extends VueAbstrait {
 
     protected CtrlConnexion ctrl;
     
-    /**
+    /*
      * Creates new form Vue_Menu
      */
     public VueConnexion(CtrlAbstrait ctrlA) {
@@ -131,14 +129,17 @@ public class VueConnexion extends VueAbstrait {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderActionPerformed
+        //Récupération de la méthode controleur 'valider'
         this.ctrl.valider();
     }//GEN-LAST:event_jButtonValiderActionPerformed
 
     private void jButtonQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitterActionPerformed
+        //Récupération de la méthode contrôleur 'quitter'
         this.ctrl.quitter();
     }//GEN-LAST:event_jButtonQuitterActionPerformed
 
     private void jPasswordFieldMdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldMdpActionPerformed
+        //Récupération de la méthode contrôleur 'valider'
         this.ctrl.valider();
     }//GEN-LAST:event_jPasswordFieldMdpActionPerformed
 

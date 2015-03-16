@@ -13,11 +13,10 @@ import modele.metier.RapportVisite;
 public class DaoRapportVisiteJPA {
 
     /**
-     * selectOne : lire un enregistrement dans la table Secteur
-     *
+     * selectOne : lire un enregistrement dans la table RapportVisite
      * @param em : contexte de persistance
-     * @param code : identifiant technique
-     * @return une instance de la classe Secteur
+     * @param matricule : identifiant technique
+     * @return une instance de la classe RapportVisite
      */
     public static RapportVisite selectOnebyID(EntityManager em, String matricule) throws PersistenceException {
         RapportVisite unRapportVisite = null;
@@ -28,10 +27,10 @@ public class DaoRapportVisiteJPA {
   
 
     /**
-     * lire tous les enregistrements de la table Secteur
-     *
+     * lire tous les enregistrements de la table RapportVisite
+     * selectAll: lire tous les enregistrements dans la table RapportVisite
      * @param em : contexte de persistance
-     * @return une collection d'instances de la classe Secteur
+     * @return une collection d'instances de la classe RapportVisite
      */
     public static List<RapportVisite> selectAll(EntityManager em) throws PersistenceException {
         List<RapportVisite> lesRapportVisites = null;

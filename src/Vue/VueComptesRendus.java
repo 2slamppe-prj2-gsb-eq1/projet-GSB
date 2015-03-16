@@ -6,6 +6,8 @@
 
 package Vue;
 
+// on importe les fonctions public de CtrlAbstrait et de CtrlComptesRendus
+
 import Controleur.CtrlAbstrait;
 import Controleur.CtrlComptesRendus;
 import javax.swing.JButton;
@@ -17,10 +19,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-/**
- *
- * @author btssio
- */
+// Recupère les associations de VueAbstrait
 public class VueComptesRendus extends VueAbstrait {
     
     protected CtrlComptesRendus ctrlCR;
@@ -250,14 +249,17 @@ public class VueComptesRendus extends VueAbstrait {
     }//GEN-LAST:event_jButtonNextActionPerformed
 
     private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
+        //Récupération de la méthode contrôleur 'nouveauRapport'
         ctrlCR.nouveauRapport();
     }//GEN-LAST:event_jButtonNewActionPerformed
 
     private void jButtonSauvegarderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSauvegarderActionPerformed
+        //Récupération de la méthode contrôleur 'sauvegarderRapport'
         ctrlCR.sauvegarderRapport();
     }//GEN-LAST:event_jButtonSauvegarderActionPerformed
 
     private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
+        //Récupération de la méthode contrôleur 'clode'
         ctrlCR.close();
     }//GEN-LAST:event_jButtonCloseActionPerformed
 

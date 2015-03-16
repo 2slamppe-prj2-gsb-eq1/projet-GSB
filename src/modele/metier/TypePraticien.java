@@ -9,7 +9,9 @@ package modele.metier;
 import javax.persistence.*;
 
 /**
- *
+ * @param code : identifiant technique
+ * @param libelle : identifiant technique
+ * @param lieu : identifiant technique
  * @author btssio
  */
 @Entity
@@ -46,7 +48,10 @@ public class TypePraticien {
     public void setLieu(String lieu) {
         this.lieu = lieu;
     }
-
+    
+/* @return une instance de la classe TypePraticien
+ * @Override Retourne tous les identifiants de la table TypePraticien
+ */
     @Override
     public String toString() {
         return "TypePraticien{" + "code=" + code + ", libelle=" + libelle + ", lieu=" + lieu + '}';

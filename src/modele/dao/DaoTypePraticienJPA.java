@@ -11,10 +11,13 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import modele.metier.TypePraticien;
 
-/**
- *
- * @author btssio
- */
+ /**
+     * selectOne : lire un enregistrement dans la table TypePraticien
+     * selectAll: Lire tous les enregistrements dans la table TypePraticien
+     * @param em : contexte de persistance
+     * @param code : identifiant technique
+     * @return une instance de la classe TypePraticien
+     */
 public class DaoTypePraticienJPA {
     
     public static TypePraticien selectOne(EntityManager em, String code) throws PersistenceException {

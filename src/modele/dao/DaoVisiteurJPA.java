@@ -13,7 +13,6 @@ public class DaoVisiteurJPA {
 
     /**
      * selectOne : lire un enregistrement dans la table Visiteur
-     *
      * @param em : contexte de persistance
      * @param matricule : identifiant technique
      * @return une instance de la classe Visiteur
@@ -27,7 +26,6 @@ public class DaoVisiteurJPA {
     
     /**
      * selectOneL : lire un enregistrement dans la table Visiteur
-     *
      * @param em : contexte de persistance
      * @param login : nom du visiteur
      * @return une instance de la classe Visiteur
@@ -42,7 +40,6 @@ public class DaoVisiteurJPA {
 
     /**
      * selectOneL : lire un enregistrement dans la table Visiteur
-     *
      * @param em : contexte de persistance
      * @param nom : nom du visiteur
      * @param prenom : prenom du visiteur
@@ -59,7 +56,6 @@ public class DaoVisiteurJPA {
     
     /**
      * lire tous les enregistrements de la table Visiteur
-     *
      * @param em : contexte de persistance
      * @return une collection d'instances de la classe visiteur
      */
@@ -72,7 +68,6 @@ public class DaoVisiteurJPA {
     
     /**
      * Vérifier le login d'un Visiteur
-     *
      * @param em : contexte de persistance
      * @param login: nom du visiteur
      * @param mdp: date d'embauche avec format JJ-MMM-AA

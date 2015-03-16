@@ -10,7 +10,9 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- *
+ * @param vis_matricule : identifiant technique
+ * @param rap_num : identifiant technique
+ * @param med_depotLegal : identifiant technique
  * @author btssio
  */
 @Entity
@@ -71,7 +73,9 @@ public class Offrir implements Serializable {
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
-
+/* @return une instance de la classe Offrir
+ * @Override Retourne tous les identifiants de la table Offrir
+ */
     @Override
     public String toString() {
         return "Offrir{" + "vis_matricule=" + vis_matricule + ", rap_num=" + rap_num + ", med_depotLegal=" + med_depotLegal + ", quantite=" + quantite + '}';

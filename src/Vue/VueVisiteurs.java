@@ -6,6 +6,7 @@
 
 package Vue;
 
+// on importe les fonctions public de CtrlAbstrait et de CtrlVisiteurs
 import Controleur.CtrlAbstrait;
 import Controleur.CtrlVisiteurs;
 import javax.swing.JButton;
@@ -13,10 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author btssio
- */
+// Recupère les associations de VueAbstrait
 public class VueVisiteurs extends VueAbstrait {
     
     protected CtrlVisiteurs ctrlV;
@@ -237,18 +235,22 @@ public class VueVisiteurs extends VueAbstrait {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonChercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChercherActionPerformed
+        //Récupération de la méthode contrôleur 'chercher'
         ((CtrlVisiteurs)controleur).chercher();
     }//GEN-LAST:event_jButtonChercherActionPerformed
 
     private void jButtonPrecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrecActionPerformed
+        //Récupération de la méthode contrôleur 'precedent'
         ((CtrlVisiteurs)controleur).precedent();
     }//GEN-LAST:event_jButtonPrecActionPerformed
 
     private void jButtonSuivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSuivActionPerformed
+        //Récupération de la méthode contrôleur 'suivant'
         ((CtrlVisiteurs)controleur).suivant();
     }//GEN-LAST:event_jButtonSuivActionPerformed
 
     private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
+        //Récupération de la méthode contrôleur 'close'
         ((CtrlVisiteurs)controleur).close();
     }//GEN-LAST:event_jButtonCloseActionPerformed
 

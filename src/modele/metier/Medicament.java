@@ -9,7 +9,13 @@ package modele.metier;
 import javax.persistence.*;
 
 /**
- *
+ * @param depotlegal : identifiant technique
+ * @param nomcommercial : identifiant technique
+ * @param code : identifiant technique
+ * @param composition : identifiant technique
+ * @param effets : identifiant technique
+ * @param contrindic : identifiant technique
+ * @param prix : identifiant technique
  * @author btssio
  */
 @Entity
@@ -86,7 +92,9 @@ public class Medicament {
     public void setPrix(float prix) {
         this.prix = prix;
     }
-
+ /* @return une instance de la classe Medicament
+  * @Override Retourne tous les identifiants de la table Medicament
+ */
     @Override
     public String toString() {
         return "Medicament{" + "depotlegal=" + depotlegal + ", nomcommercial=" + nomcommercial + ", code=" + code + ", composition=" + composition + ", effets=" + effets + ", contrindic=" + contrindic + ", prix=" + prix + '}';

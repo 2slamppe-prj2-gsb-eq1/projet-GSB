@@ -9,7 +9,10 @@ package modele.metier;
 import java.util.Objects;
 
 /**
- *
+ * @param serialVersionUID : identifiant technique
+ * @param vis_matricule : identifiant technique
+ * @param rap_num : identifiant technique
+ * @param med_depotLegal : identifiant technique
  * @author btssio
  */
 public class OffrirPK implements java.io.Serializable {
@@ -83,7 +86,9 @@ public class OffrirPK implements java.io.Serializable {
         }
         return true;
     }
-
+/* @return une instance de la classe OffrirPK
+ * @Override Retourne tous les identifiants de la table OffrirPK
+ */
     @Override
     public String toString() {
         return "OffrirPK{" + "vis_matricule=" + vis_matricule + ", rap_num=" + rap_num + ", med_depotLegal=" + med_depotLegal + '}';

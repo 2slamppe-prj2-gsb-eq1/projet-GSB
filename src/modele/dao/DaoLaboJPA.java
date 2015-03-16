@@ -13,14 +13,13 @@ public class DaoLaboJPA {
 
     /**
      * selectOne : lire un enregistrement dans la table Labo
-     *
+     * selectALL: Lire tous les enregistrements dans la table Labo
      * @param em : contexte de persistance
-     * @param code : identifiant technique
+     * @param code_lab : identifiant technique
      * @return une instance de la classe Labo
      */
     public static Labo selectOne(EntityManager em, String code_lab) throws PersistenceException {
         Labo unLabo = null;
-        // A COMPLETER
         unLabo = em.find(Labo.class, code_lab);
         return unLabo;
     }
@@ -30,7 +29,6 @@ public class DaoLaboJPA {
         List<Labo> lesLabos = null;
         Query query= em.createQuery("select l from Labo l");
         lesLabos = query.getResultList();
-       // A COMPLETER
         return lesLabos;
     }
 }

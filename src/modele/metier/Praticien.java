@@ -9,7 +9,14 @@ package modele.metier;
 import javax.persistence.*;
 
 /**
- *
+ * @param numero : identifiant technique
+ * @param nom : identifiant technique
+ * @param prenom : identifiant technique
+ * @param adresse : identifiant technique
+ * @param cp : identifiant technique
+ * @param ville : identifiant technique
+ * @param coef : identifiant technique
+ * @param code : identifiant technique
  * @author btssio
  */
 @Entity
@@ -97,7 +104,9 @@ public class Praticien {
     public void setCode(String code) {
         this.code = code;
     }
-
+/* @return une instance de la classe Praticien
+ * @Override Retourne tous les identifiants de la table Praticien
+ */
     @Override
     public String toString() {
         return "Praticien{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", cp=" + cp + ", ville=" + ville + ", coef=" + coef + ", code=" + code + '}';

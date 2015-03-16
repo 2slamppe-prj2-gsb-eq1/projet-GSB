@@ -9,7 +9,8 @@ package modele.metier;
 import javax.persistence.*;
 
 /**
- *
+ * @param code_sec : identifiant technique
+ * @param libelle : identifiant technique
  * @author btssio
  */
 @Entity

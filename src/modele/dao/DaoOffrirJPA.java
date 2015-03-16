@@ -12,14 +12,17 @@ import javax.persistence.Query;
 import modele.metier.Offrir;
 
 /**
- *
- * @author btssio
- */
+     * selectOne : lire un enregistrement dans la table Offrir
+     * selectALL: Lire tous les enregistrements dans la table Offrir
+     * @param em : contexte de persistance
+     * @param vis_matricule : identifiant technique
+     * @return une instance de la classe Offrir
+     */
 public class DaoOffrirJPA {
     
-    public static Offrir SelectOne(EntityManager em, String matricule) throws PersistenceException {
+    public static Offrir SelectOne(EntityManager em, String vis_matricule) throws PersistenceException {
         Offrir unOffrir=null;
-        unOffrir=em.find(Offrir.class, matricule);
+        unOffrir=em.find(Offrir.class, vis_matricule);
         return unOffrir;
     }
     

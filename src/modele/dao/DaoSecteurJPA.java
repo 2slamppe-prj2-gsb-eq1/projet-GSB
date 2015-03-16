@@ -14,9 +14,8 @@ public class DaoSecteurJPA {
 
     /**
      * selectOne : lire un enregistrement dans la table Secteur
-     *
      * @param em : contexte de persistance
-     * @param code : identifiant technique
+     * @param code_sec : identifiant technique
      * @return une instance de la classe Secteur
      */
     public static Secteur selectOne(EntityManager em, String code_sec) throws PersistenceException {
@@ -29,7 +28,7 @@ public class DaoSecteurJPA {
 
     /**
      * lire tous les enregistrements de la table Secteur
-     *
+     * selectAll: lire tous les enregistrements dans la table Secteur
      * @param em : contexte de persistance
      * @return une collection d'instances de la classe Secteur
      */

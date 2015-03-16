@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Vue;
 
+// on importe les fonctions public de CtrlAbstrait
+
 import Controleur.CtrlAbstrait;
 
-/**
- *
- * @author btssio
- */
+
 public abstract class VueAbstrait extends javax.swing.JFrame {
     // associations
     protected CtrlAbstrait controleur=null;

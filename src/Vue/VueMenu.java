@@ -6,14 +6,12 @@
 
 package Vue;
 
+// on importe les fonctions public de CtrlAbstrait et de CtrlMenu
 import Controleur.CtrlAbstrait;
 import Controleur.CtrlMenu;
 import javax.swing.JCheckBox;
 
-/**
- *
- * @author btssio
- */
+// Recupère les associations de VueAbstrait
 public class VueMenu extends VueAbstrait {
     
     protected CtrlMenu ctrlM;
@@ -139,18 +137,22 @@ public class VueMenu extends VueAbstrait {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void jCheckBoxComptesRendusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxComptesRendusActionPerformed
+        //Récupération de la méthode contrôleur 'afficherComptesRendus'
         this.getCtrlM().afficherComptesRendus();
     }//GEN-LAST:event_jCheckBoxComptesRendusActionPerformed
     private void jCheckBoxVisiteursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxVisiteursActionPerformed
+        //Récupération de la méthode contrôleur 'afficherVisiteur'
         this.getCtrlM().afficherVisiteur();
     }//GEN-LAST:event_jCheckBoxVisiteursActionPerformed
     private void jCheckBoxPracticiensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPracticiensActionPerformed
+        //Récupération de la méthode contrôleur 'afficherPraticiens'
         this.getCtrlM().afficherPraticiens();
     }//GEN-LAST:event_jCheckBoxPracticiensActionPerformed
     private void jCheckBoxMedicamentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMedicamentsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxMedicamentsActionPerformed
     private void jCheckBoxQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxQuitActionPerformed
+        //Récupération de la méthode contrôleur 'close'
         this.getCtrlM().close();
     }//GEN-LAST:event_jCheckBoxQuitActionPerformed
 
