@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import modele.metier.RapportVisite;
+import modele.metier.Visiteur;
 
 public class DaoRapportVisiteJPA {
 
@@ -35,6 +36,20 @@ public class DaoRapportVisiteJPA {
     public static List<RapportVisite> selectAll(EntityManager em) throws PersistenceException {
         List<RapportVisite> lesRapportVisites = null;
         Query query= em.createQuery("select rv from RapportVisite rv");
+        lesRapportVisites = query.getResultList();
+        return lesRapportVisites;
+    }
+    
+    /**
+     * lire tous les enregistrements de la table RapportVisite en fonction du Visiteur
+     *
+     * @param em : contexte de persistance
+     * @return une collection d'instances de la classe Secteur
+     */
+    public static List<RapportVisite> selectOneByVisiteur(EntityManager em, Visiteur leVisiteur) throws PersistenceException {
+        List<RapportVisite> lesRapportVisites = null;
+        Query query= em.createQuery("select rv from RapportVisite rv where rv.matricule = :matricule");
+        query.setParameter("matricule", leVisiteur);
         lesRapportVisites = query.getResultList();
         return lesRapportVisites;
     }

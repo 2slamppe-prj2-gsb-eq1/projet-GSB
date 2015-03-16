@@ -21,7 +21,10 @@ import modele.dao.*;
 public class CtrlComptesRendus extends CtrlAbstrait {
     private VueComptesRendus vue;
     EntityManager em;
+    private List<RapportVisite> lesRapportsVisites;
     private List<Praticien> lesPraticiens;
+    private Visiteur leVisiteur;
+    private String loginVisiteur;
     
     public CtrlComptesRendus(VueComptesRendus vueCR, VueAbstrait vueA) {
         super(vueA);
@@ -35,7 +38,7 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         // récupération des praticiens pour l'affichage dans la combobox praticien
         lesPraticiens = DaoPraticienJPA.selectAll(em);
         
-        //ajout d'un item vide dans la combobox praticien
+        // ajout d'un item vide dans la combobox praticien
         this.vue.getjComboBoxPracticien().addItem("");
         
         // boucle pour placer tous les praticiens dans la combobox praticien
@@ -44,6 +47,14 @@ public class CtrlComptesRendus extends CtrlAbstrait {
             // ajout du nom et du prénom du praticien dans la combobox praticien
             this.vue.getjComboBoxPracticien().addItem(lePraticien.getNom() + " " + lePraticien.getPrenom());
         }
+        
+        // récupération du login du visiteur
+        // System.out.println(loginVisiteur);
+        //leVisiteur = DaoVisiteurJPA.selectOneByLogin(em, loginVisiteur);
+        leVisiteur = DaoVisiteurJPA.selectOneByLogin(em, "swiss");
+        // récupération des rapports visites
+        lesRapportsVisites = DaoRapportVisiteJPA.selectOneByVisiteur(em, leVisiteur);
+        System.out.println(lesRapportsVisites);
         
         // Ne pas afficher le bouton sauvegarder
         this.vue.getjButtonSauvegarder().setVisible(false);
@@ -72,5 +83,4 @@ public class CtrlComptesRendus extends CtrlAbstrait {
     public void setVue(VueComptesRendus vue) {
         this.vue = vue;
     }
-    
 }

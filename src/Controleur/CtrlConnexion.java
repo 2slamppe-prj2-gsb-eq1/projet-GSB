@@ -9,8 +9,9 @@ package Controleur;
 import Vue.VueAbstrait;
 import Vue.VueConnexion;
 import javax.persistence.EntityManager;
-import modele.dao.EntityManagerFactorySingleton;
+import javax.swing.JOptionPane;
 import modele.dao.DaoVisiteurJPA;
+import modele.dao.EntityManagerFactorySingleton;
 
 /**
  *
@@ -45,7 +46,8 @@ public class CtrlConnexion extends CtrlAbstrait{
             // this.getVue().setVisible(false);
         } else{
             // Affichage du message d'erreur
-            System.out.print("connexion non établi, erreur du login ou du mot de passe");
+            JOptionPane.showMessageDialog(this.vue, "Erreur du login ou du mot de passe", "Connexion non établi", 
+                    JOptionPane.WARNING_MESSAGE);
         }
     }
     
