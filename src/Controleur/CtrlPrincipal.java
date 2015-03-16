@@ -94,7 +94,6 @@ public class CtrlPrincipal {
             // il faut rafraîchir le contenu à partir de la base de données
             ctrlVisiteurs.actualiser();
         }
-        
         //Affichage de la vue Visiteur
         ctrlVisiteurs.getVue().setVisible(true);
     }
