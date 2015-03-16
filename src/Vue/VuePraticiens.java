@@ -328,6 +328,11 @@ public class VuePraticiens extends VueAbstrait {
         jLabel9.setText("Chercher");
 
         jComboBoxSearch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSearchActionPerformed(evt);
+            }
+        });
 
         jButtonOK.setText("Ok");
 
@@ -448,6 +453,10 @@ public class VuePraticiens extends VueAbstrait {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jComboBoxSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonClose;
@@ -476,4 +485,8 @@ public class VuePraticiens extends VueAbstrait {
     private javax.swing.JTextField jTextFieldVilleCP;
     private javax.swing.JTextField jTextFieldVilleNom;
     // End of variables declaration//GEN-END:variables
+
+    public Object getjComboBoxChercher() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -9,7 +9,9 @@ package Controleur;
 import Vue.VueAbstrait;
 import Vue.VuePraticiens;
 import javax.persistence.EntityManager;
+import modele.dao.DaoPraticienJPA;
 import modele.dao.EntityManagerFactorySingleton;
+import modele.metier.Praticien;
 
 /**
  *
@@ -27,11 +29,33 @@ public class CtrlPraticiens extends CtrlAbstrait {
         // Gérer la persistance
         em = EntityManagerFactorySingleton.getInstance().createEntityManager();
         em.getTransaction().begin();
+        
+        
+       
     }
 
-    public void actualiser() {
+    public final void actualiser() {
         
     }
+    public void chercher(){
+       String nom= (String) this.vue.getjComboBoxSearch().getSelectedItem();
+       String [] libelle = nom.split(" ", 0);
+        Praticien unPraticien = DaoPraticienJPA.selectOneByNomPrenom(em, libelle[0], libelle[1]);
+        afficherPraticien(unPraticien);
+    }
+     public void precedent(){
+        Praticien lePraticien = null;
+        for(int i = 0; i<lesPraticiens.size(); i++){
+            Praticien unPraticien = lesPraticiens.get(i);
+            if(unPraticien.getNom().equals(this.vue.getjTextFieldNom().getText()) && unPatricien.getPrenom().equals(this.vue.getjTextFieldPrenom().getText())){
+                if(i == 0){
+                    lePraticien = lesPraticiens.get(lesPraticiens.size()-1);
+                } else{
+                    lePraticien = lesPraticiens.get(i-1);
+                }
+            }
+        }
+  
 
     public VuePraticiens getVue() {
         return vue;

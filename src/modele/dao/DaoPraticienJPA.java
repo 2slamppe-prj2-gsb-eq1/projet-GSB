@@ -14,18 +14,28 @@ import modele.metier.Praticien;
 /**
      * selectOne : lire un enregistrement dans la table Praticien
      * @param em : contexte de persistance
-     * @param numero : identifiant technique
+     * @param nom : identifiant technique
      * @return une instance de la classe Praticien
      */
 public class DaoPraticienJPA {
     
-    public static Praticien selectOne(EntityManager em, int numero)throws PersistenceException {
+    public static Praticien selectOne(EntityManager em, String nom)throws PersistenceException {
      
         Praticien unPraticien=null;
-        unPraticien=em.find(Praticien.class, numero);
+        unPraticien=em.find(Praticien.class, nom);
         return unPraticien;
         
     }  
+    
+    
+    public static Praticien selectOneByNomPrenom(EntityManager em, String nom, String prenom) throws PersistenceException {
+        Praticien praticien = null;
+        Query query = em.createQuery("select v from Visiteur v where v.nom = :nom and v.prenom = :prenom");
+        query.setParameter("nom", nom);
+        query.setParameter("prenom", prenom);
+        praticien = (Praticien) query.getSingleResult();
+        return praticien;
+    }
     
         /**
      * lire tous les enregistrements de la table Praticien
