@@ -64,6 +64,7 @@ public class VueComptesRendus extends VueAbstrait {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButtonSauvegarder = new javax.swing.JButton();
+        jLabelOffreEchantillons = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,6 +152,8 @@ public class VueComptesRendus extends VueAbstrait {
             }
         });
 
+        jLabelOffreEchantillons.setText("Offre d'échantillons");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,11 +167,11 @@ public class VueComptesRendus extends VueAbstrait {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelDateRapport)
                             .addComponent(jLabelMotifVisite)
-                            .addComponent(jLabelBilan)
                             .addComponent(jLabelPraticien)
                             .addComponent(jLabelNumeroRapport)
-                            .addComponent(jLabelDateRapport))
+                            .addComponent(jLabelBilan))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jComboBoxPracticien, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -191,7 +194,8 @@ public class VueComptesRendus extends VueAbstrait {
                             .addComponent(jButtonSauvegarder)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonClose))
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelOffreEchantillons))
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
@@ -201,29 +205,29 @@ public class VueComptesRendus extends VueAbstrait {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelNumeroRapport)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelPraticien)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelDateRapport)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelMotifVisite)
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabelBilan))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jTextFieldNumRapport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBoxPracticien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDetails))
+                            .addComponent(jButtonDetails)
+                            .addComponent(jLabelPraticien))
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldDateRapport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldDateRapport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelDateRapport))
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldMotifVis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldMotifVis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelMotifVisite)))
+                    .addComponent(jLabelNumeroRapport))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelBilan)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelOffreEchantillons)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPrevious)
@@ -370,6 +374,7 @@ public class VueComptesRendus extends VueAbstrait {
     private javax.swing.JLabel jLabelDateRapport;
     private javax.swing.JLabel jLabelMotifVisite;
     private javax.swing.JLabel jLabelNumeroRapport;
+    private javax.swing.JLabel jLabelOffreEchantillons;
     private javax.swing.JLabel jLabelPraticien;
     private javax.swing.JPanel jPanelTitre;
     private javax.swing.JScrollPane jScrollPane1;

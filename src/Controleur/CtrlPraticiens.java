@@ -29,7 +29,7 @@ public class CtrlPraticiens extends CtrlAbstrait {
         em.getTransaction().begin();
     }
 
-    void actualiser() {
+    public void actualiser() {
         
     }
 
