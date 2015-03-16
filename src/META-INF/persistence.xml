@@ -5,10 +5,11 @@
     <class>modele.metier.Secteur</class>
     <class>modele.metier.Labo</class>
     <class>modele.metier.Visiteur</class>
-    <class>modele.metier.RapportVisite</class>
     <class>modele.metier.Medicament</class>
     <class>modele.metier.Praticien</class>
     <class>modele.metier.TypePraticien</class>
+    <class>modele.metier.Offrir</class>
+    <class>modele.metier.RapportVisite</class>
     <properties>
       <property name="javax.persistence.schema-generation.scripts.action" value="create"/>
       <property name="javax.persistence.schema-generation.scripts.create-target" value="createBD.sql"/>

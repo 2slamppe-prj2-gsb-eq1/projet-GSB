@@ -6,6 +6,7 @@
 
 package modele.metier;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -13,45 +14,54 @@ import javax.persistence.*;
  * @author btssio
  */
 @Entity
-@Table(name="OFFRIR")
-public class Offrir {
+@Table(name = "OFFRIR")
+@IdClass(OffrirPK.class)
+public class Offrir implements Serializable {
+
+    //attributs
     @Id
-    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name="VIS_MATRICULE")
-    private Visiteur matricule;
+    private String vis_matricule;
     @Id
-    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name="RAP_NUM")
-    private RapportVisite numero_rap;
+    private int rap_num;
     @Id
-    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name="MED_DEPOTLEGAL")
-    private Medicament depotlegal;
-    @Column(name="OFF_QTE", length=38)
+    private String med_depotLegal;
+
+    @Column(name = "OFF_QTE")
     private int quantite;
 
-    public Visiteur getMatricule() {
-        return matricule;
+    //Constructeur
+    public Offrir() {
     }
 
-    public void setMatricule(Visiteur matricule) {
-        this.matricule = matricule;
+    public Offrir(String vis_matricule, int rap_num, String med_depotLegal, int quantite) {
+        this.vis_matricule = vis_matricule;
+        this.rap_num = rap_num;
+        this.med_depotLegal = med_depotLegal;
+        this.quantite = quantite;
     }
 
-    public RapportVisite getNumero_rap() {
-        return numero_rap;
+    public String getVis_matricule() {
+        return vis_matricule;
     }
 
-    public void setNumero_rap(RapportVisite numero_rap) {
-        this.numero_rap = numero_rap;
+    public void setVis_matricule(String vis_matricule) {
+        this.vis_matricule = vis_matricule;
     }
 
-    public Medicament getDepotlegal() {
-        return depotlegal;
+    public int getRap_num() {
+        return rap_num;
     }
 
-    public void setDepotlegal(Medicament depotlegal) {
-        this.depotlegal = depotlegal;
+    public void setRap_num(int rap_num) {
+        this.rap_num = rap_num;
+    }
+
+    public String getMed_depotLegal() {
+        return med_depotLegal;
+    }
+
+    public void setMed_depotLegal(String med_depotLegal) {
+        this.med_depotLegal = med_depotLegal;
     }
 
     public int getQuantite() {
@@ -64,6 +74,7 @@ public class Offrir {
 
     @Override
     public String toString() {
-        return "Offrir{" + "matricule=" + matricule + ", numero_rap=" + numero_rap + ", depotlegal=" + depotlegal + ", quantite=" + quantite + '}';
+        return "Offrir{" + "vis_matricule=" + vis_matricule + ", rap_num=" + rap_num + ", med_depotLegal=" + med_depotLegal + ", quantite=" + quantite + '}';
     }
+
 }
