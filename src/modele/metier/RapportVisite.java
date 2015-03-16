@@ -28,6 +28,7 @@ public class RapportVisite {
     @JoinColumn(name="PRA_NUM")
     private Praticien numero;
     @Column(name="RAP_DATE")
+    @Temporal(value=TemporalType.DATE)
     private Date date_rap;
     @Column(name="RAP_BILAN", length=255)
     private String bilan_rap;

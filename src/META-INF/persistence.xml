@@ -7,17 +7,16 @@
     <class>modele.metier.Visiteur</class>
     <class>modele.metier.RapportVisite</class>
     <class>modele.metier.Medicament</class>
-    <class>modele.metier.Offrir</class>
     <class>modele.metier.Praticien</class>
     <class>modele.metier.TypePraticien</class>
     <properties>
       <property name="javax.persistence.schema-generation.scripts.action" value="create"/>
       <property name="javax.persistence.schema-generation.scripts.create-target" value="createBD.sql"/>
       <property name="javax.persistence.schema-generation.scripts.drop-target" value="dropBD.sql"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@172.15.11.102:1521:orcl"/>
-      <property name="javax.persistence.jdbc.password" value="equipe01"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+      <property name="javax.persistence.jdbc.password" value="gsb2015"/>
       <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-      <property name="javax.persistence.jdbc.user" value="ora_2slamppe_eq1"/>
+      <property name="javax.persistence.jdbc.user" value="gsb2015"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>

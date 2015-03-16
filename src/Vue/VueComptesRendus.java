@@ -47,8 +47,7 @@ public class VueComptesRendus extends VueAbstrait {
         jLabel1 = new javax.swing.JLabel();
         jLabelPraticien = new javax.swing.JLabel();
         jLabelMotifVisite = new javax.swing.JLabel();
-        jLabelEffetIndesirable = new javax.swing.JLabel();
-        jLabelContreIndications = new javax.swing.JLabel();
+        jLabelBilan = new javax.swing.JLabel();
         jTextFieldDateRapport = new javax.swing.JTextField();
         jTextFieldMotifVis = new javax.swing.JTextField();
         jButtonPrevious = new javax.swing.JButton();
@@ -59,10 +58,12 @@ public class VueComptesRendus extends VueAbstrait {
         jLabelNumeroRapport = new javax.swing.JLabel();
         jComboBoxPracticien = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaEffIndesir = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAreaContreIndic = new javax.swing.JTextArea();
+        jTextAreaBilan = new javax.swing.JTextArea();
         jButtonNew = new javax.swing.JButton();
+        jButtonDetails = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButtonSauvegarder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,117 +89,177 @@ public class VueComptesRendus extends VueAbstrait {
 
         jLabelMotifVisite.setText("Motif Visite");
 
-        jLabelEffetIndesirable.setText("Effets indésirables");
-
-        jLabelContreIndications.setText("Contre indications");
+        jLabelBilan.setText("Bilan");
 
         jButtonPrevious.setText("Précédent");
+        jButtonPrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPreviousActionPerformed(evt);
+            }
+        });
 
         jButtonNext.setText("Suivant");
+        jButtonNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNextActionPerformed(evt);
+            }
+        });
 
         jButtonClose.setText("Fermer");
+        jButtonClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCloseActionPerformed(evt);
+            }
+        });
 
         jLabelDateRapport.setText("Date Rapport");
 
         jLabelNumeroRapport.setText("Numéro Rapport");
 
-        jTextAreaEffIndesir.setColumns(20);
-        jTextAreaEffIndesir.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaEffIndesir);
-
-        jTextAreaContreIndic.setColumns(20);
-        jTextAreaContreIndic.setRows(5);
-        jScrollPane2.setViewportView(jTextAreaContreIndic);
+        jTextAreaBilan.setColumns(20);
+        jTextAreaBilan.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaBilan);
 
         jButtonNew.setText("Nouveau");
+        jButtonNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNewActionPerformed(evt);
+            }
+        });
+
+        jButtonDetails.setText("Détails");
+        jButtonDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDetailsActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null}
+            },
+            new String [] {
+                "Médicament", "Nb. Echantillons"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jButtonSauvegarder.setText("Sauvegarder");
+        jButtonSauvegarder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSauvegarderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelMotifVisite)
-                            .addComponent(jLabelEffetIndesirable)
+                            .addComponent(jLabelBilan)
                             .addComponent(jLabelPraticien)
                             .addComponent(jLabelNumeroRapport)
                             .addComponent(jLabelDateRapport))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldMotifVis, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldDateRapport)
-                                    .addComponent(jComboBoxPracticien, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldNumRapport)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabelContreIndications)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBoxPracticien, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldDateRapport, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldMotifVis, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldNumRapport, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(77, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(jButtonPrevious)
-                .addGap(36, 36, 36)
-                .addComponent(jButtonNext)
-                .addGap(38, 38, 38)
-                .addComponent(jButtonNew)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonClose)
-                .addGap(37, 37, 37))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonPrevious)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonNew)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonDetails)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButtonSauvegarder)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonClose))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroRapport)
-                    .addComponent(jTextFieldNumRapport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelPraticien)
-                    .addComponent(jComboBoxPracticien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDateRapport)
-                    .addComponent(jTextFieldDateRapport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelMotifVisite)
-                    .addComponent(jTextFieldMotifVis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabelEffetIndesirable))
-                    .addComponent(jScrollPane1)
-                    .addComponent(jLabelContreIndications, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelNumeroRapport)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelPraticien)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelDateRapport)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelMotifVisite)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabelBilan))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldNumRapport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonPrevious)
-                            .addComponent(jButtonNext)
-                            .addComponent(jButtonNew))
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonClose)
-                        .addContainerGap())))
+                            .addComponent(jComboBoxPracticien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonDetails))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldDateRapport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldMotifVis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonPrevious)
+                    .addComponent(jButtonNext)
+                    .addComponent(jButtonNew)
+                    .addComponent(jButtonSauvegarder)
+                    .addComponent(jButtonClose))
+                .addGap(12, 12, 12))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonDetailsActionPerformed
+
+    private void jButtonPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPreviousActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPreviousActionPerformed
+
+    private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonNextActionPerformed
+
+    private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
+        ctrlCR.nouveauRapport();
+    }//GEN-LAST:event_jButtonNewActionPerformed
+
+    private void jButtonSauvegarderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSauvegarderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSauvegarderActionPerformed
+
+    private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
+        ctrlCR.close();
+    }//GEN-LAST:event_jButtonCloseActionPerformed
 
     public CtrlComptesRendus getCtrl() {
         return ctrlCR;
@@ -206,7 +267,7 @@ public class VueComptesRendus extends VueAbstrait {
 
     public void setCtrl(CtrlComptesRendus ctrlCR) {
         this.ctrlCR = ctrlCR;
-    }
+    }    
 
     public JButton getjButtonClose() {
         return jButtonClose;
@@ -214,6 +275,14 @@ public class VueComptesRendus extends VueAbstrait {
 
     public void setjButtonClose(JButton jButtonClose) {
         this.jButtonClose = jButtonClose;
+    }
+
+    public JButton getjButtonDetails() {
+        return jButtonDetails;
+    }
+
+    public void setjButtonDetails(JButton jButtonDetails) {
+        this.jButtonDetails = jButtonDetails;
     }
 
     public JButton getjButtonNew() {
@@ -240,6 +309,14 @@ public class VueComptesRendus extends VueAbstrait {
         this.jButtonPrevious = jButtonPrevious;
     }
 
+    public JButton getjButtonSauvegarder() {
+        return jButtonSauvegarder;
+    }
+
+    public void setjButtonSauvegarder(JButton jButtonSauvegarder) {
+        this.jButtonSauvegarder = jButtonSauvegarder;
+    }
+
     public JComboBox getjComboBoxPracticien() {
         return jComboBoxPracticien;
     }
@@ -248,108 +325,12 @@ public class VueComptesRendus extends VueAbstrait {
         this.jComboBoxPracticien = jComboBoxPracticien;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
+    public JTextArea getjTextAreaBilan() {
+        return jTextAreaBilan;
     }
 
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
-    }
-
-    public JLabel getjLabelContreIndications() {
-        return jLabelContreIndications;
-    }
-
-    public void setjLabelContreIndications(JLabel jLabelContreIndications) {
-        this.jLabelContreIndications = jLabelContreIndications;
-    }
-
-    public JLabel getjLabelDateRapport() {
-        return jLabelDateRapport;
-    }
-
-    public void setjLabelDateRapport(JLabel jLabelDateRapport) {
-        this.jLabelDateRapport = jLabelDateRapport;
-    }
-
-    public JLabel getjLabelEffetIndesirable() {
-        return jLabelEffetIndesirable;
-    }
-
-    public void setjLabelEffetIndesirable(JLabel jLabelEffetIndesirable) {
-        this.jLabelEffetIndesirable = jLabelEffetIndesirable;
-    }
-
-    public JLabel getjLabelMotifVisite() {
-        return jLabelMotifVisite;
-    }
-
-    public void setjLabelMotifVisite(JLabel jLabelMotifVisite) {
-        this.jLabelMotifVisite = jLabelMotifVisite;
-    }
-
-    public JLabel getjLabelNumeroRapport() {
-        return jLabelNumeroRapport;
-    }
-
-    public void setjLabelNumeroRapport(JLabel jLabelNumeroRapport) {
-        this.jLabelNumeroRapport = jLabelNumeroRapport;
-    }
-
-    public JLabel getjLabelPraticien() {
-        return jLabelPraticien;
-    }
-
-    public void setjLabelPraticien(JLabel jLabelPraticien) {
-        this.jLabelPraticien = jLabelPraticien;
-    }
-
-    public JPanel getjPanelTitre() {
-        return jPanelTitre;
-    }
-
-    public void setjPanelTitre(JPanel jPanelTitre) {
-        this.jPanelTitre = jPanelTitre;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JScrollPane getjScrollPane2() {
-        return jScrollPane2;
-    }
-
-    public void setjScrollPane2(JScrollPane jScrollPane2) {
-        this.jScrollPane2 = jScrollPane2;
-    }
-
-    public JSplitPane getjSplitPane1() {
-        return jSplitPane1;
-    }
-
-    public void setjSplitPane1(JSplitPane jSplitPane1) {
-        this.jSplitPane1 = jSplitPane1;
-    }
-
-    public JTextArea getjTextAreaContreIndic() {
-        return jTextAreaContreIndic;
-    }
-
-    public void setjTextAreaContreIndic(JTextArea jTextAreaContreIndic) {
-        this.jTextAreaContreIndic = jTextAreaContreIndic;
-    }
-
-    public JTextArea getjTextAreaEffIndesir() {
-        return jTextAreaEffIndesir;
-    }
-
-    public void setjTextAreaEffIndesir(JTextArea jTextAreaEffIndesir) {
-        this.jTextAreaEffIndesir = jTextAreaEffIndesir;
+    public void setjTextAreaBilan(JTextArea jTextAreaBilan) {
+        this.jTextAreaBilan = jTextAreaBilan;
     }
 
     public JTextField getjTextFieldDateRapport() {
@@ -375,19 +356,18 @@ public class VueComptesRendus extends VueAbstrait {
     public void setjTextFieldNumRapport(JTextField jTextFieldNumRapport) {
         this.jTextFieldNumRapport = jTextFieldNumRapport;
     }
-
-    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonClose;
+    private javax.swing.JButton jButtonDetails;
     private javax.swing.JButton jButtonNew;
     private javax.swing.JButton jButtonNext;
     private javax.swing.JButton jButtonPrevious;
+    private javax.swing.JButton jButtonSauvegarder;
     private javax.swing.JComboBox jComboBoxPracticien;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelContreIndications;
+    private javax.swing.JLabel jLabelBilan;
     private javax.swing.JLabel jLabelDateRapport;
-    private javax.swing.JLabel jLabelEffetIndesirable;
     private javax.swing.JLabel jLabelMotifVisite;
     private javax.swing.JLabel jLabelNumeroRapport;
     private javax.swing.JLabel jLabelPraticien;
@@ -395,8 +375,8 @@ public class VueComptesRendus extends VueAbstrait {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextArea jTextAreaContreIndic;
-    private javax.swing.JTextArea jTextAreaEffIndesir;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextAreaBilan;
     private javax.swing.JTextField jTextFieldDateRapport;
     private javax.swing.JTextField jTextFieldMotifVis;
     private javax.swing.JTextField jTextFieldNumRapport;

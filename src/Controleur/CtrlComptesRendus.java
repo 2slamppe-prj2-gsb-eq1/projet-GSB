@@ -29,8 +29,16 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         em.getTransaction().begin();
     }
 
-    void actualiser() {
+    public void actualiser() {
         
+    }
+    
+    public void nouveauRapport(){
+        this.vue.getjButtonNew().setVisible(false);
+    }
+    
+    public void close(){
+        this.vue.setVisible(false);
     }
 
     public VueComptesRendus getVue() {
