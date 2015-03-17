@@ -30,13 +30,21 @@ public class DaoPraticienJPA {
     
     public static Praticien selectOneByNomPrenom(EntityManager em, String nom, String prenom) throws PersistenceException {
         Praticien praticien = null;
-        Query query = em.createQuery("select v from Visiteur v where v.nom = :nom and v.prenom = :prenom");
+        Query query = em.createQuery("select pra from Praticien pra where pra.nom = :nom and pra.prenom = :prenom");
         query.setParameter("nom", nom);
         query.setParameter("prenom", prenom);
         praticien = (Praticien) query.getSingleResult();
         return praticien;
     }
     
+    
+      public static Praticien selectOneByID(EntityManager em, float numero) throws PersistenceException {
+        Praticien praticien = null;
+        Query query = em.createQuery("select pra from Praticien pra where pra.num = :numero");
+        query.setParameter("numero", numero);
+        praticien = (Praticien) query.getSingleResult();
+        return praticien;
+    }
         /**
      * lire tous les enregistrements de la table Praticien
      * selectALL: Lire tous les enregistrements dans la table Praticien
@@ -46,7 +54,7 @@ public class DaoPraticienJPA {
     
     public static List<Praticien> selectAll(EntityManager em) throws PersistenceException {
         List<Praticien> lesPraticiens = null;
-        Query query= em.createQuery("select v from Praticien v");
+        Query query= em.createQuery("select pra from Praticien pra");
         lesPraticiens = query.getResultList();
         return lesPraticiens;
     }

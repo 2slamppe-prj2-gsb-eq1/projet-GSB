@@ -25,7 +25,7 @@ public class Praticien {
     @Id
     @GeneratedValue
     @Column(name="PRA_NUM", length=38)
-    private int numero;
+    private String numero;
     @Column(name="PRA_NOM", length=25)
     private String nom;
     @Column(name="PRA_PRENOM", length=30)
@@ -37,15 +37,15 @@ public class Praticien {
     @Column(name="PRA_VILLE", length=25)
     private String ville;
     @Column(name="PRA_COEFNOTORIETE")
-    private float coef;
+    private String coef;
     @Column(name="TYP_CODE", length=3)
     private String code;
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -89,11 +89,11 @@ public class Praticien {
         this.ville = ville;
     }
 
-    public float getCoef() {
+    public String getCoef() {
         return coef;
     }
 
-    public void setCoef(float coef) {
+    public void setCoef(String coef) {
         this.coef = coef;
     }
 

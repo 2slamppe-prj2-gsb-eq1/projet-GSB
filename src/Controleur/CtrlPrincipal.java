@@ -127,6 +127,8 @@ public class CtrlPrincipal {
             // il faut rafraîchir le contenu à partir de la base de données
             ctrlPraticiens.actualiser();
         }
+        //Affichage de la vue Visiteur
         ctrlPraticiens.getVue().setVisible(true);
     }
+    
 }
