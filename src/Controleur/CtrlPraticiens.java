@@ -88,7 +88,7 @@ public class CtrlPraticiens extends CtrlAbstrait {
         
         for(int i=0; i<lesPraticiens.size();i++){
             Praticien unPraticien = lesPraticiens.get(i);
-            if(unPraticien.getNumero())
+            //if(unPraticien.getNumero())
         }
         //Praticien unPraticien = DaoPraticienJPA.selectOneByID(em, 75);
         //System.out.println(unPraticien);
@@ -139,7 +139,7 @@ public class CtrlPraticiens extends CtrlAbstrait {
     }
     
     public void afficherPraticien(Praticien unPraticien){ /*Lieu exercice a ajouter */
-        this.vue.getjTextFieldNum().setText(""+unPraticien.getNumero());
+        this.vue.getjTextFieldNum().setText(unPraticien.getNumero());
         this.vue.getjTextFieldNom().setText(unPraticien.getNom());
         this.vue.getjTextFieldPrenom().setText(unPraticien.getPrenom());
         this.vue.getjTextFieldAdresse().setText(unPraticien.getAdresse());
