@@ -85,10 +85,6 @@ public class CtrlVisiteurs extends CtrlAbstrait{
         Visiteur leVisiteur = null;
         for(int i = 0; i<lesVisiteurs.size(); i++){
             Visiteur unVisiteur = lesVisiteurs.get(i);
-//            System.out.print(i + "-");
-//            System.out.print(lesVisiteurs.size()-1 + "-");
-//            System.out.print(unVisiteur.getNom() + "-");
-//            System.out.print(unVisiteur.getPrenom() + "\n");
             if(unVisiteur.getNom().equals(this.vue.getjTextFieldNom().getText()) && unVisiteur.getPrenom().equals(this.vue.getjTextFieldPrenom().getText())){
                 if(i == lesVisiteurs.size()-1){
                     leVisiteur = lesVisiteurs.get(0);
@@ -97,7 +93,6 @@ public class CtrlVisiteurs extends CtrlAbstrait{
                 }
             }
         }
-//        System.out.print(leVisiteur.getCode_sec());
         afficherVisiteur(leVisiteur);
     }
     

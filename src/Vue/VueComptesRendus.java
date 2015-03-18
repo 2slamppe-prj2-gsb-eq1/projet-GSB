@@ -91,6 +91,10 @@ public class VueComptesRendus extends VueAbstrait {
 
         jLabelBilan.setText("Bilan");
 
+        jTextFieldDateRapport.setEditable(false);
+
+        jTextFieldMotifVis.setEditable(false);
+
         jButtonPrevious.setText("Précédent");
         jButtonPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,8 +118,14 @@ public class VueComptesRendus extends VueAbstrait {
 
         jLabelDateRapport.setText("Date Rapport");
 
+        jTextFieldNumRapport.setEditable(false);
+        jTextFieldNumRapport.setEnabled(false);
+
         jLabelNumeroRapport.setText("Numéro Rapport");
 
+        jComboBoxPracticien.setEnabled(false);
+
+        jTextAreaBilan.setEditable(false);
         jTextAreaBilan.setColumns(20);
         jTextAreaBilan.setRows(5);
         jScrollPane1.setViewportView(jTextAreaBilan);
@@ -241,15 +251,15 @@ public class VueComptesRendus extends VueAbstrait {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetailsActionPerformed
-        // TODO add your handling code here:
+        ctrlCR.DetailsPraticien();
     }//GEN-LAST:event_jButtonDetailsActionPerformed
 
     private void jButtonPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPreviousActionPerformed
-        // TODO add your handling code here:
+        ctrlCR.precedent();
     }//GEN-LAST:event_jButtonPreviousActionPerformed
 
     private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
-        // TODO add your handling code here:
+        ctrlCR.suivant();
     }//GEN-LAST:event_jButtonNextActionPerformed
 
     private void jButtonNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewActionPerformed
@@ -323,12 +333,12 @@ public class VueComptesRendus extends VueAbstrait {
         this.jButtonSauvegarder = jButtonSauvegarder;
     }
 
-    public JComboBox getjComboBoxPracticien() {
+    public JComboBox getjComboBoxPraticien() {
         return jComboBoxPracticien;
     }
 
-    public void setjComboBoxPracticien(JComboBox jComboBoxPracticien) {
-        this.jComboBoxPracticien = jComboBoxPracticien;
+    public void setjComboBoxPraticien(JComboBox jComboBoxPraticien) {
+        this.jComboBoxPracticien = jComboBoxPraticien;
     }
 
     public JTextArea getjTextAreaBilan() {
