@@ -112,7 +112,8 @@ public class CtrlComptesRendus extends CtrlAbstrait {
     }
     
     public void DetailsPraticien(){
-        
+        CtrlPrincipal ctrlP = new CtrlPrincipal();
+        ctrlP.action(this.vue.getjComboBoxPraticien().getSelectedItem()+"");
     }
     
   

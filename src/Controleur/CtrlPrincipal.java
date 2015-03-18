@@ -7,7 +7,11 @@ import Vue.VueConnexion;
 import Vue.VueMenu;
 import Vue.VuePraticiens;
 import Vue.VueVisiteurs;
+import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
+import modele.dao.DaoPraticienJPA;
+import modele.dao.EntityManagerFactorySingleton;
+import modele.metier.Praticien;
 
 /**
  * Controleur principal (ou frontal) - un lien vers chaque contrôleur de base
@@ -25,6 +29,14 @@ public class CtrlPrincipal {
     VueAbstrait vueA = null;
     CtrlAbstrait ctrlA = null;
     VueConnexion vueC = new VueConnexion(ctrlA);
+    EntityManager em;
+    Praticien lePraticien;
+
+    public CtrlPrincipal() {
+        // Gérer la persistance
+        em = EntityManagerFactorySingleton.getInstance().createEntityManager();
+        em.getTransaction().begin();
+    }
 
     /**
      * action par défaut action au démarrage de l'application
@@ -57,6 +69,10 @@ public class CtrlPrincipal {
                 break;
         }
 
+    }
+    
+    public void action(String Praticien) {
+        afficherDetailsPraticien(Praticien);
     }
 
     /**
@@ -128,6 +144,19 @@ public class CtrlPrincipal {
             ctrlPraticiens.actualiser();
         }
         //Affichage de la vue Visiteur
+        ctrlPraticiens.getVue().setVisible(true);
+    }
+    
+    private void afficherDetailsPraticien(String Praticien){
+        if (ctrlPraticiens == null) {
+            VuePraticiens vueP = new VuePraticiens(ctrlA);
+            ctrlPraticiens = new CtrlPraticiens(vueP, vueA);
+        }
+        //préparation des combos box
+        String nomPraticien= Praticien.split(" ")[0];
+        String prenomPraticien= Praticien.split(" ")[1];
+        lePraticien = DaoPraticienJPA.selectOneByNomPrenom(em, nomPraticien, prenomPraticien);
+        ctrlPraticiens.afficherPraticien(lePraticien);
         ctrlPraticiens.getVue().setVisible(true);
     }
     

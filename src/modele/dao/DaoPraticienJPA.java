@@ -38,9 +38,9 @@ public class DaoPraticienJPA {
     }
     
     
-      public static Praticien selectOneByID(EntityManager em, float numero) throws PersistenceException {
+      public static Praticien selectOneByID(EntityManager em, String numero) throws PersistenceException {
         Praticien praticien = null;
-        Query query = em.createQuery("select pra from Praticien pra where pra.num = :numero");
+        Query query = em.createQuery("select pra from Praticien pra where pra.numero = :numero");
         query.setParameter("numero", numero);
         praticien = (Praticien) query.getSingleResult();
         return praticien;
