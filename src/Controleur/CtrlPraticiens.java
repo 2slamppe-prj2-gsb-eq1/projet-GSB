@@ -37,10 +37,12 @@ public class CtrlPraticiens extends CtrlAbstrait {
         //préparation des combos box
         lesPraticiens = DaoPraticienJPA.selectAllOrderPraNum(em);
         remplissageComboBox(lesPraticiens);
+        
 
         //préparation de l'état initial de l'affichage
         indicePraticienCourant = 0;
         praticienCourant = lesPraticiens.get(indicePraticienCourant);
+                  
         afficherPraticien(praticienCourant);
     }
 
@@ -65,6 +67,9 @@ public class CtrlPraticiens extends CtrlAbstrait {
     }
 
     public void suivant() {
+        String numeroString = (String) this.vue.getjTextFieldNum().getText();
+        indicePraticienCourant = Integer.parseInt(numeroString)-1;
+        
         if (indicePraticienCourant == lesPraticiens.size()-1) {
             indicePraticienCourant = 0;
         } else {
@@ -75,6 +80,9 @@ public class CtrlPraticiens extends CtrlAbstrait {
     }
 
     public void precedent() {
+        String numeroString = (String) this.vue.getjTextFieldNum().getText();
+        indicePraticienCourant = Integer.parseInt(numeroString)-1;
+        
         if (indicePraticienCourant == 0) {
             indicePraticienCourant = lesPraticiens.size()-1;
         } else {
@@ -106,8 +114,12 @@ public class CtrlPraticiens extends CtrlAbstrait {
         this.vue.getjTextFieldVilleCP().setText(unPraticien.getCp());
         this.vue.getjTextFieldVilleNom().setText(unPraticien.getVille());
         this.vue.getjTextFieldCoefNot().setText(unPraticien.getCoef());
+        
+        TypePraticien unTypePraticien=DaoTypePraticienJPA.selectOne(em, unPraticien.getCode());
+        this.vue.getjTextFieldLieux().setText(unTypePraticien.getLibelle());
     }
 
+    
     public void close() {
         this.vue.setVisible(false);
     }
