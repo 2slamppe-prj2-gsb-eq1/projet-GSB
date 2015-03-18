@@ -115,6 +115,7 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         
     }
     
+  
     public void close(){
         this.vue.setVisible(false);
     }
