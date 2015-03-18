@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -61,7 +62,7 @@ public class VueComptesRendus extends VueAbstrait {
         jButtonNew = new javax.swing.JButton();
         jButtonDetails = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableOffre = new javax.swing.JTable();
         jButtonSauvegarder = new javax.swing.JButton();
         jLabelOffreEchantillons = new javax.swing.JLabel();
 
@@ -144,7 +145,7 @@ public class VueComptesRendus extends VueAbstrait {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableOffre.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null}
             },
@@ -152,7 +153,7 @@ public class VueComptesRendus extends VueAbstrait {
                 "Médicament", "Nb. Echantillons"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTableOffre);
 
         jButtonSauvegarder.setText("Sauvegarder");
         jButtonSauvegarder.addActionListener(new java.awt.event.ActionListener() {
@@ -372,6 +373,120 @@ public class VueComptesRendus extends VueAbstrait {
     public void setjTextFieldNumRapport(JTextField jTextFieldNumRapport) {
         this.jTextFieldNumRapport = jTextFieldNumRapport;
     }
+
+    public CtrlComptesRendus getCtrlCR() {
+        return ctrlCR;
+    }
+
+    public void setCtrlCR(CtrlComptesRendus ctrlCR) {
+        this.ctrlCR = ctrlCR;
+    }
+
+    public JComboBox getjComboBoxPracticien() {
+        return jComboBoxPracticien;
+    }
+
+    public void setjComboBoxPracticien(JComboBox jComboBoxPracticien) {
+        this.jComboBoxPracticien = jComboBoxPracticien;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabelBilan() {
+        return jLabelBilan;
+    }
+
+    public void setjLabelBilan(JLabel jLabelBilan) {
+        this.jLabelBilan = jLabelBilan;
+    }
+
+    public JLabel getjLabelDateRapport() {
+        return jLabelDateRapport;
+    }
+
+    public void setjLabelDateRapport(JLabel jLabelDateRapport) {
+        this.jLabelDateRapport = jLabelDateRapport;
+    }
+
+    public JLabel getjLabelMotifVisite() {
+        return jLabelMotifVisite;
+    }
+
+    public void setjLabelMotifVisite(JLabel jLabelMotifVisite) {
+        this.jLabelMotifVisite = jLabelMotifVisite;
+    }
+
+    public JLabel getjLabelNumeroRapport() {
+        return jLabelNumeroRapport;
+    }
+
+    public void setjLabelNumeroRapport(JLabel jLabelNumeroRapport) {
+        this.jLabelNumeroRapport = jLabelNumeroRapport;
+    }
+
+    public JLabel getjLabelOffreEchantillons() {
+        return jLabelOffreEchantillons;
+    }
+
+    public void setjLabelOffreEchantillons(JLabel jLabelOffreEchantillons) {
+        this.jLabelOffreEchantillons = jLabelOffreEchantillons;
+    }
+
+    public JLabel getjLabelPraticien() {
+        return jLabelPraticien;
+    }
+
+    public void setjLabelPraticien(JLabel jLabelPraticien) {
+        this.jLabelPraticien = jLabelPraticien;
+    }
+
+    public JPanel getjPanelTitre() {
+        return jPanelTitre;
+    }
+
+    public void setjPanelTitre(JPanel jPanelTitre) {
+        this.jPanelTitre = jPanelTitre;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JSplitPane getjSplitPane1() {
+        return jSplitPane1;
+    }
+
+    public void setjSplitPane1(JSplitPane jSplitPane1) {
+        this.jSplitPane1 = jSplitPane1;
+    }
+
+    public JTable getjTableOffre() {
+        return jTableOffre;
+    }
+
+    public void setjTableOffre(JTable jTableOffre) {
+        this.jTableOffre = jTableOffre;
+    }
+
+   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonClose;
@@ -392,7 +507,7 @@ public class VueComptesRendus extends VueAbstrait {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableOffre;
     private javax.swing.JTextArea jTextAreaBilan;
     private javax.swing.JTextField jTextFieldDateRapport;
     private javax.swing.JTextField jTextFieldMotifVis;
