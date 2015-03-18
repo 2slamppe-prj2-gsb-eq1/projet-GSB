@@ -68,19 +68,9 @@ public class CtrlPraticiens extends CtrlAbstrait {
     
     
     public void suivantTest(){
-        //On recupere le nom et prénom
-        /*List<Praticien> lesPraticiens;
-        String nom = this.vue.getjTextFieldNom().getText();
-        String prenom = this.vue.getjTextFieldPrenom().getText();
-        lesPraticiensAll = DaoPraticienJPA.selectAll(em);
-        Praticien unPraticien = DaoPraticienJPA.selectOneByNomPrenom(em, nom, prenom);
-        System.out.println(lesPraticiensAll.get(unPraticien.getNumero()));
-        afficherPraticien(unPraticien);*/
-        
+ 
         //*****NOM ET PRENOM*******
-        String nom = this.vue.getjTextFieldNom().getText();
-        String prenom = this.vue.getjTextFieldPrenom().getText();
-        
+        String numero = this.vue.getjTextFieldNum().getText();
         //On selectionne tous les praticiens dans une ArrayList ***lesPraticiens***
         List<Praticien> lesPraticiens;
         lesPraticiens = DaoPraticienJPA.selectAll(em);
@@ -88,7 +78,14 @@ public class CtrlPraticiens extends CtrlAbstrait {
         
         for(int i=0; i<lesPraticiens.size();i++){
             Praticien unPraticien = lesPraticiens.get(i);
-            //if(unPraticien.getNumero())
+            String num = unPraticien.getNumero();
+            if(unPraticien.getNumero()!=num){
+                afficherPraticien(lesPraticiens.get(i+1));
+                i=lesPraticiens.size();
+            } else {
+                System.out.println(unPraticien.getNumero());
+            }
+           
         }
         //Praticien unPraticien = DaoPraticienJPA.selectOneByID(em, 75);
         //System.out.println(unPraticien);
