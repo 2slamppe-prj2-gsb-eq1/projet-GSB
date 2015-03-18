@@ -24,6 +24,7 @@ public class CtrlComptesRendus extends CtrlAbstrait {
     EntityManager em;
     private List<RapportVisite> lesRapportsVisites;
     private List<Praticien> lesPraticiens;
+    private List<Offrir> lesOffres;
     private Visiteur leVisiteur;
     private String loginVisiteur;
     private int indiceRapportVisiteCourant;
@@ -72,8 +73,13 @@ public class CtrlComptesRendus extends CtrlAbstrait {
     
     public void nouveauRapport(){
         this.vue.getjButtonSauvegarder().setVisible(true);
+        
+
     }
     
+    public void afficherMedicament(Medicament unMedicament){
+        
+    }
     public void sauvegarderRapport(){
         this.vue.getjButtonSauvegarder().setVisible(false);
     }
@@ -91,6 +97,13 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         
         this.vue.getjTextFieldMotifVis().setText(leRapportViste.getMotif_rap());
         this.vue.getjTextAreaBilan().setText(leRapportViste.getBilan_rap());
+        List<Medicament> lesMedicaments = DaoMedicamentJPA.selectAll(em);
+        
+        
+        //vue.getjTableOffre().columnAdded(1);
+        //vue.getjTableOffre().setValueAt(lesMedicaments.get(i), 0, 0);
+        
+   
     }
     
     public void suivant(){
