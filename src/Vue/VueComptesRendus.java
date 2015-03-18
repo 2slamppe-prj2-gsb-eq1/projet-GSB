@@ -119,11 +119,11 @@ public class VueComptesRendus extends VueAbstrait {
 
         jLabelDateRapport.setText("Date Rapport");
 
-        jTextFieldNumRapport.setEditable(false);
         jTextFieldNumRapport.setEnabled(false);
 
         jLabelNumeroRapport.setText("Numéro Rapport");
 
+        jComboBoxPracticien.setEditable(true);
         jComboBoxPracticien.setEnabled(false);
 
         jTextAreaBilan.setEditable(false);
@@ -147,7 +147,7 @@ public class VueComptesRendus extends VueAbstrait {
 
         jTableOffre.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null}
+
             },
             new String [] {
                 "Médicament", "Nb. Echantillons"

@@ -307,16 +307,6 @@ public class VuePraticiens extends VueAbstrait {
 
         jLabel6.setText("Coef. Notoriété");
 
-        jTextFieldNom.setText("jTextField1");
-
-        jTextFieldPrenom.setText("jTextField2");
-
-        jTextFieldAdresse.setText("jTextField3");
-
-        jTextFieldVilleCP.setText("jTextField4");
-
-        jTextFieldVilleNom.setText("jTextField5");
-
         jLabel7.setText("Lieu d'exercice");
 
         jButtonPrevious.setText("Précédent");
@@ -357,10 +347,6 @@ public class VuePraticiens extends VueAbstrait {
             }
         });
 
-        jTextFieldCoefNot.setText("jTextField7");
-
-        jTextFieldLieux.setText("jTextField1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -400,22 +386,21 @@ public class VuePraticiens extends VueAbstrait {
                                             .addComponent(jLabel9))
                                         .addGap(52, 52, 52)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldAdresse)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextFieldVilleCP, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldVilleNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextFieldVilleCP, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldVilleNom))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(2, 2, 2)
                                         .addComponent(jComboBoxSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButtonOK))
-                                    .addComponent(jTextFieldCoefNot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextFieldNum, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jTextFieldLieux)))))
+                                    .addComponent(jTextFieldNum)
+                                    .addComponent(jTextFieldNom)
+                                    .addComponent(jTextFieldLieux)
+                                    .addComponent(jTextFieldPrenom)
+                                    .addComponent(jTextFieldCoefNot)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))

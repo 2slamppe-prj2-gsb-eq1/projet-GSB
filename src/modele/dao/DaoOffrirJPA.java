@@ -32,4 +32,12 @@ public class DaoOffrirJPA {
         desOffrirs=query.getResultList();
         return desOffrirs;
     }
+    
+    public static List<Offrir> selectOneByRapNum(EntityManager em, int rap_num) throws PersistenceException {
+        List<Offrir> desOffrirs=null;
+        Query query = em.createQuery("select v from Offrir v where v.rap_num = :rap_num ");
+        query.setParameter("rap_num", rap_num);
+        desOffrirs=query.getResultList();
+        return desOffrirs;
+    }
 }

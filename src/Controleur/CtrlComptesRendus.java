@@ -11,6 +11,9 @@ import Vue.VueComptesRendus;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import modele.dao.*;
 import modele.dao.EntityManagerFactorySingleton;
 import modele.metier.*;
@@ -68,20 +71,43 @@ public class CtrlComptesRendus extends CtrlAbstrait {
     }
 
     public void actualiser() {
+        // récupération des rapports visites
+        // lesRapportsVisites = DaoRapportVisiteJPA.selectOneByVisiteur(em, leVisiteur);
+        lesRapportsVisites = DaoRapportVisiteJPA.selectAll(em);
         
+        indiceRapportVisiteCourant = 0;
+        leRapportViste = lesRapportsVisites.get(indiceRapportVisiteCourant);
+        afficherCompteRendu(leRapportViste);
     }
     
     public void nouveauRapport(){
+        this.vue.getjTextFieldNumRapport().setText("(Nouv.)");
+        this.vue.getjComboBoxPraticien().setEnabled(true);
+        this.vue.getjComboBoxPraticien().setSelectedItem("");
+        this.vue.getjTextFieldDateRapport().setEditable(true);
+        this.vue.getjTextFieldDateRapport().setText("");
+        this.vue.getjTextFieldMotifVis().setEditable(true);
+        this.vue.getjTextFieldMotifVis().setText("");
+        this.vue.getjTextAreaBilan().setEditable(true);
+        this.vue.getjTextAreaBilan().setText("");
+        DefaultTableModel model = (DefaultTableModel) this.vue.getjTableOffre().getModel();
+        while(model.getRowCount() != 0){
+            model.removeRow(0);
+        }
         this.vue.getjButtonSauvegarder().setVisible(true);
-        
-
     }
     
-    public void afficherMedicament(Medicament unMedicament){
-        
-    }
     public void sauvegarderRapport(){
-        this.vue.getjButtonSauvegarder().setVisible(false);
+        System.out.println(this.vue.getjComboBoxPraticien().getSelectedItem());
+        System.out.println(this.vue.getjTextFieldDateRapport().getText());
+        System.out.println(this.vue.getjTextFieldMotifVis().getText());
+        System.out.println(this.vue.getjTextAreaBilan().getText());
+        //this.vue.getjComboBoxPraticien().setEnabled(false);
+        //this.vue.getjTextFieldDateRapport().setEditable(false);
+        //this.vue.getjTextFieldMotifVis().setEditable(false);
+        //this.vue.getjTextAreaBilan().setEditable(false);
+        //this.vue.getjButtonSauvegarder().setVisible(false);
+        //actualiser();
     }
     
     public void afficherCompteRendu(RapportVisite leRapportViste){
@@ -97,13 +123,14 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         
         this.vue.getjTextFieldMotifVis().setText(leRapportViste.getMotif_rap());
         this.vue.getjTextAreaBilan().setText(leRapportViste.getBilan_rap());
-        List<Medicament> lesMedicaments = DaoMedicamentJPA.selectAll(em);
         
+        List<Offrir> lesOffres = DaoOffrirJPA.selectOneByRapNum(em, leRapportViste.getNumero_rap());
         
-        //vue.getjTableOffre().columnAdded(1);
-        //vue.getjTableOffre().setValueAt(lesMedicaments.get(i), 0, 0);
+        DefaultTableModel model = (DefaultTableModel) this.vue.getjTableOffre().getModel();
         
-   
+        for(int i = 0; i<lesOffres.size(); i++){
+            model.addRow(new Object[]{lesOffres.get(i).getMed_depotLegal(), lesOffres.get(i).getQuantite()});
+        }
     }
     
     public void suivant(){
@@ -112,7 +139,12 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         } else {
             indiceRapportVisiteCourant = indiceRapportVisiteCourant + 1;
         }
+        DefaultTableModel model = (DefaultTableModel) this.vue.getjTableOffre().getModel();
+        while(model.getRowCount() != 0){
+            model.removeRow(0);
+        }
         afficherCompteRendu(lesRapportsVisites.get(indiceRapportVisiteCourant));
+        
     }
     
     public void precedent(){
@@ -121,12 +153,21 @@ public class CtrlComptesRendus extends CtrlAbstrait {
         } else {
             indiceRapportVisiteCourant = indiceRapportVisiteCourant - 1;
         }
+        DefaultTableModel model = (DefaultTableModel) this.vue.getjTableOffre().getModel();
+        while(model.getRowCount() != 0){
+            model.removeRow(0);
+        }
         afficherCompteRendu(lesRapportsVisites.get(indiceRapportVisiteCourant));
     }
     
     public void DetailsPraticien(){
-        CtrlPrincipal ctrlP = new CtrlPrincipal();
-        ctrlP.action(this.vue.getjComboBoxPraticien().getSelectedItem()+"");
+        if(this.vue.getjComboBoxPraticien().getSelectedItem() != ""){
+            CtrlPrincipal ctrlP = new CtrlPrincipal();
+            ctrlP.action(this.vue.getjComboBoxPraticien().getSelectedItem()+"");
+        } else{
+            JOptionPane.showMessageDialog(this.vue, "Veuillez choisir un Praticien", "Erreur Praticien", 
+                    JOptionPane.WARNING_MESSAGE);
+        }
     }
     
   
