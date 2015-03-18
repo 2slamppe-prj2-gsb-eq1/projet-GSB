@@ -64,13 +64,15 @@ public class VuePraticiens extends VueAbstrait {
         this.jButtonPrevious = jButtonPrevious;
     }
 
-    public JComboBox getjComboBoxLieuExe() {
-        return jComboBoxLieuExe;
+    public JTextField getjTextFieldLieux() {
+        return jTextFieldLieux;
     }
 
-    public void setjComboBoxLieuExe(JComboBox jComboBoxLieuExe) {
-        this.jComboBoxLieuExe = jComboBoxLieuExe;
+    public void setjTextFieldLieux(JTextField jTextFieldLieux) {
+        this.jTextFieldLieux = jTextFieldLieux;
     }
+
+  
 
     public JComboBox getjComboBoxSearch() {
         return jComboBoxSearch;
@@ -264,7 +266,6 @@ public class VuePraticiens extends VueAbstrait {
         jTextFieldVilleCP = new javax.swing.JTextField();
         jTextFieldVilleNom = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jComboBoxLieuExe = new javax.swing.JComboBox();
         jButtonPrevious = new javax.swing.JButton();
         jButtonNext = new javax.swing.JButton();
         jButtonClose = new javax.swing.JButton();
@@ -274,6 +275,7 @@ public class VuePraticiens extends VueAbstrait {
         jComboBoxSearch = new javax.swing.JComboBox();
         jButtonOK = new javax.swing.JButton();
         jTextFieldCoefNot = new javax.swing.JTextField();
+        jTextFieldLieux = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -317,8 +319,6 @@ public class VuePraticiens extends VueAbstrait {
 
         jLabel7.setText("Lieu d'exercice");
 
-        jComboBoxLieuExe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "item1", "item2", "item3" }));
-
         jButtonPrevious.setText("Précédent");
         jButtonPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -359,6 +359,8 @@ public class VuePraticiens extends VueAbstrait {
 
         jTextFieldCoefNot.setText("jTextField7");
 
+        jTextFieldLieux.setText("jTextField1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -397,10 +399,9 @@ public class VuePraticiens extends VueAbstrait {
                                             .addComponent(jLabel8)
                                             .addComponent(jLabel9))
                                         .addGap(52, 52, 52)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBoxLieuExe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldAdresse)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jTextFieldVilleCP, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -413,7 +414,8 @@ public class VuePraticiens extends VueAbstrait {
                                     .addComponent(jTextFieldCoefNot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jTextFieldNum, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.LEADING))))))
+                                        .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jTextFieldLieux)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(jPanelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -464,7 +466,7 @@ public class VuePraticiens extends VueAbstrait {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jComboBoxLieuExe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldLieux, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonNext)
@@ -501,7 +503,6 @@ public class VuePraticiens extends VueAbstrait {
     private javax.swing.JButton jButtonNext;
     private javax.swing.JButton jButtonOK;
     private javax.swing.JButton jButtonPrevious;
-    private javax.swing.JComboBox jComboBoxLieuExe;
     private javax.swing.JComboBox jComboBoxSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -517,6 +518,7 @@ public class VuePraticiens extends VueAbstrait {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextField jTextFieldAdresse;
     private javax.swing.JTextField jTextFieldCoefNot;
+    private javax.swing.JTextField jTextFieldLieux;
     private javax.swing.JTextField jTextFieldNom;
     private javax.swing.JTextField jTextFieldNum;
     private javax.swing.JTextField jTextFieldPrenom;
