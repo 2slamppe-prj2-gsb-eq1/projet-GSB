@@ -67,58 +67,23 @@ public class CtrlPraticiens extends CtrlAbstrait {
     
     
     
-    public void suivantTest(){
- 
-        //*****NOM ET PRENOM*******
-        String numero = this.vue.getjTextFieldNum().getText();
-        //On selectionne tous les praticiens dans une ArrayList ***lesPraticiens***
-        List<Praticien> lesPraticiens;
-        lesPraticiens = DaoPraticienJPA.selectAll(em);
-        Praticien lePraticien = null;
-        
-        for(int i=0; i<lesPraticiens.size();i++){
-            Praticien unPraticien = lesPraticiens.get(i);
-            String num = unPraticien.getNumero();
-            if(unPraticien.getNumero()!=num){
-                afficherPraticien(lesPraticiens.get(i+1));
-                i=lesPraticiens.size();
-            } else {
-                System.out.println(unPraticien.getNumero());
-            }
-           
-        }
-        //Praticien unPraticien = DaoPraticienJPA.selectOneByID(em, 75);
-        //System.out.println(unPraticien);
-        
-    }
-    
     public void suivant(){
-        Praticien lePraticien = null;
-        for(int i = 0; i<lesPraticiens.size(); i++){
-            Praticien unPraticien = lesPraticiens.get(i);
-            if(unPraticien.getNom().equals(this.vue.getjTextFieldNom().getText()) && lePraticien.getPrenom().equals(this.vue.getjTextFieldPrenom().getText())){
-               if(i == lesPraticiens.size()-1){
-                    lePraticien = lesPraticiens.get(0);
-                } else{
-                    lePraticien = lesPraticiens.get(i+1);
-                }
-            }
-        }
+        if(indicePraticienCourant==lesPraticiens.size()){
+           indicePraticienCourant=0;
+       } else {
+           indicePraticienCourant=+1;
+           afficherPraticien(lesPraticiens.get(indicePraticienCourant));
+       }
      }
     
     
      public void precedent(){
-        Praticien lePraticien = null;
-        for(int i = 0; i<lesPraticiens.size(); i++){
-            Praticien unPraticien = lesPraticiens.get(i);
-            if(unPraticien.getNom().equals(this.vue.getjTextFieldNom().getText()) && lePraticien.getPrenom().equals(this.vue.getjTextFieldPrenom().getText())){
-                if(i == 0){
-                    lePraticien = lesPraticiens.get(lesPraticiens.size()-1);
-                } else{
-                    lePraticien = lesPraticiens.get(i-1);
-                }
-            }
-        }
+        if(indicePraticienCourant==0){
+           indicePraticienCourant=0;
+       } else {
+           indicePraticienCourant=-1;
+           afficherPraticien(lesPraticiens.get(indicePraticienCourant));
+       }
      }
         
       /**

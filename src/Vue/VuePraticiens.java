@@ -484,7 +484,7 @@ public class VuePraticiens extends VueAbstrait {
     }//GEN-LAST:event_jButtonOKActionPerformed
 
     private void jButtonNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextActionPerformed
-        ctrlP.suivantTest();
+        ctrlP.suivant();
     }//GEN-LAST:event_jButtonNextActionPerformed
 
     private void jButtonPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPreviousActionPerformed
