@@ -59,5 +59,27 @@ public class DaoPraticienJPA {
         return lesPraticiens;
     }
     
+        /**
+     * lire tous les enregistrements de la table Praticien
+     * selectALL: Lire tous les enregistrements dans la table Praticien
+     * @param em : contexte de persistance
+     * @return une collection d'instances de la classe Praticien
+     */
+    
+    public static List<Praticien> selectAllOrderPraNum(EntityManager em) throws PersistenceException {
+        List<Praticien> lesPraticiens = null;
+        Query query= em.createQuery("select pra from Praticien pra order by pra.numero");
+        lesPraticiens = query.getResultList();
+        return lesPraticiens;
+    }
+    
+    public static Praticien selectNum(EntityManager em, String nom, String prenom) throws PersistenceException {
+        Praticien praticien = null;
+        Query query = em.createQuery("select pra.numero from Praticien pra where pra.nom = :nom and pra.prenom = :prenom");
+        query.setParameter("nom", nom);
+        query.setParameter("prenom", prenom);
+        praticien = (Praticien) query.getSingleResult();
+        return praticien;
+    }
     
 }
