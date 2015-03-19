@@ -40,4 +40,8 @@ public class DaoOffrirJPA {
         desOffrirs=query.getResultList();
         return desOffrirs;
     }
+
+    public static Offrir SelectOne(EntityManager em, String vis_matricule, int rap_num, String med_depotLegal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

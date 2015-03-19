@@ -81,5 +81,9 @@ public class DaoPraticienJPA {
         praticien = (Praticien) query.getSingleResult();
         return praticien;
     }
+
+    public static Praticien selectOne(EntityManager em, int numPra) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

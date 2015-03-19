@@ -53,5 +53,9 @@ public class DaoRapportVisiteJPA {
         lesRapportVisites = query.getResultList();
         return lesRapportVisites;
     }
+
+    public static RapportVisite selectOnebyID(EntityManager em, String matricule, int cle2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

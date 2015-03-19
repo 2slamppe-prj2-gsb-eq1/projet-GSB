@@ -25,6 +25,10 @@ public class TypePraticien {
     @Column(name="TYP_LIEU", length=35)
     private String lieu;
 
+    public TypePraticien(String cc, String test_coucou, String local_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getCode() {
         return code;
     }

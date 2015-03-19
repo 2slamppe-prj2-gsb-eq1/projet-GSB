@@ -41,6 +41,10 @@ public class Praticien {
     @Column(name="TYP_CODE", length=3)
     private String code;
 
+    public Praticien(int i, String hugo, String manu, String adresse, String cp, String ville, float parseFloat, TypePraticien unTypePra) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getNumero() {
         return numero;
     }
@@ -110,5 +114,13 @@ public class Praticien {
     @Override
     public String toString() {
         return "Praticien{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", cp=" + cp + ", ville=" + ville + ", coef=" + coef + ", code=" + code + '}';
+    }
+
+    public void setTypePraticien(TypePraticien unTypePra2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setcoef(float parseFloat) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

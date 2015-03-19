@@ -40,6 +40,14 @@ public class RapportVisite {
     @Column(name="RAP_MOTIF", length=255)
     private String motif_rap;
 
+    public RapportVisite(String sdsd9, int i, Praticien unPra, Object object, Object object0, Object object1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public RapportVisite() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Visiteur getMatricule() {
         return matricule;
     }

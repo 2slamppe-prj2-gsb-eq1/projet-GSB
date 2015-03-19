@@ -37,6 +37,10 @@ public class Medicament {
     @Column(name="MED_PRIXECHANTILLON")
     private float prix;
 
+    public Medicament(String tes, String tuesporal, String hochfg, String douleur, String non, String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getDepotlegal() {
         return depotlegal;
     }
