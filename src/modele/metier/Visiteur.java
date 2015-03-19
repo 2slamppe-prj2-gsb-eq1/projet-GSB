@@ -48,12 +48,7 @@ public class Visiteur {
     @JoinColumn(name="LAB_CODE")
     private Labo code_lab; 
 
-    public Visiteur(String string, String manu, String hugo, String adresse, String cp, String ville, Date date, String s, String code_lab) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Visiteur(String b52, String poilu, String gérard, String _rue_du_Bourg, String string, String nantes, Date parse, Secteur sec, Labo lab) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Visiteur() {
     }
 
     public String getMatricule() {

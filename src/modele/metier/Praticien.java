@@ -41,8 +41,7 @@ public class Praticien {
     @Column(name="TYP_CODE", length=3)
     private String code;
 
-    public Praticien(int i, String hugo, String manu, String adresse, String cp, String ville, float parseFloat, TypePraticien unTypePra) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Praticien() {
     }
 
     public String getNumero() {

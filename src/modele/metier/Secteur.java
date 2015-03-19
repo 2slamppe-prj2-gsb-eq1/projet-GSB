@@ -23,8 +23,7 @@ public class Secteur {
     @Column(name="SEC_LIBELLE", length=15)
     private String libelle;
 
-    public Secteur(String n, String nord) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Secteur() {
     }
 
     public String getCode_sec() {

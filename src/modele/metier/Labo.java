@@ -27,10 +27,9 @@ public class Labo {
     @Column(name="LAB_CHEFVENTE", length=20)
     private String chefVente;
 
-    public Labo(String xd, String luffy, String nami) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Labo() {
     }
-
+    
     public String getCode_lab() {
         return code_lab;
     }
